@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiuqiu.mapper.QiuQiuUserArticleDao">
+    <select id="findQiuQiuUserArticleHasBaned" resultType="com.qiuqiu.entity.QiuQiuUserArticle">
+        select * from qq_article where banState=#{type} ORDER BY id DESC limit #{pageCurrent},#{pageSize};
+    </select>
+    <update id="buArticleByIds">
+        UPDATE qq_article  SET banState=#{valid}  WHERE id IN (
+        <foreach collection="ids" separator="," item="id">#{id}</foreach>
+        )
+    </update>
+    <insert id="banArticleReason" parameterType="java.util.List">
+        insert into qq_banarticle (articleId,adminId,content,createdTime,updateTime) values
+        <foreach collection="qiuBanReason" separator="," index="index" item="item">
+            (#{item.articleId,jdbcType=INTEGER},#{item.adminId,jdbcType=INTEGER},#{item.content,jdbcType=VARCHAR},now(),now())
+        </foreach>
+    </insert>
+</mapper>
