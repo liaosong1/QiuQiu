@@ -1,11 +1,11 @@
 package com.qiuqiu;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-//指定springboot程序启动时不加载数据源
-@SpringBootApplication(exclude= DataSourceAutoConfiguration.class)
+@SpringBootApplication
+@MapperScan("com.qiuqiu.mapper") //将Mybatis的mapper接口交给spring容器管理
 public class ManageSpringBootRun {
 
     public static void main(String[] args) {

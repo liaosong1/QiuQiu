@@ -1,5 +1,7 @@
 package com.qiuqiu.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -11,16 +13,19 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName("qq_article")
 public class QiuQiuUserArticle extends BasePojo{
+    @TableId(type= IdType.AUTO)
+    private Integer id;
     //文章内容
     private String addres;
     //标题
     private String title;
     //点击量
-    private int clickNum;
+    private Integer clickNum;
     //收藏量
-    private int storeNum;
+    private Integer storeNum;
     //评论量
-    private int commentNum;
+    private Integer commentNum;
     //作者id
-    private int userId;
+    private Integer userId;
+    private Integer banState;
 }
