@@ -1,0 +1,27 @@
+server:
+  port: 8092
+  servlet:
+    context-path: /
+dubbo:
+  scan:
+    basePackages: com.qiuqiu
+  application:
+    name: provider-user
+#  registry:
+#    address: zookeeper://192.168.209.129:2181 #?backup=192.168.209.129:2182,192.168.209.129:2183
+
+spring:
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/pages/
+    servlet:
+      content-type: text/html
+    mode: LEGACYHTML5
+    cache: false
+  datasource:
+    #引入druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.209.1:3306/jtdb?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: 123456

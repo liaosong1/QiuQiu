@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qiuqiu:war">
+    <output-path>$PROJECT_DIR$/qiuqiu/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>qiuqiu</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="qiuqiu.war">
+      <element id="artifact" artifact-name="qiuqiu:war exploded" />
+    </root>
+  </artifact>
+</component>

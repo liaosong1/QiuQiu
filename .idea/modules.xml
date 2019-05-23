@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/qiuqiu/qiuqiu.iml" filepath="$PROJECT_DIR$/qiuqiu/qiuqiu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qiuqiu_common/qiuqiu_common.iml" filepath="$PROJECT_DIR$/qiuqiu_common/qiuqiu_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qiuqiu_manage/qiuqiu_manage.iml" filepath="$PROJECT_DIR$/qiuqiu_manage/qiuqiu_manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qiuqiu_web/qiuqiu_web.iml" filepath="$PROJECT_DIR$/qiuqiu_web/qiuqiu_web.iml" />
+    </modules>
+  </component>
+</project>
