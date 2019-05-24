@@ -6,24 +6,24 @@
 
         <title>Why ECharts</title>
 
-        <meta name="description" content="Why echarts?">
-        <meta name="author" content="kener.linfeng@gmail.com">
+        <meta content="Why echarts?" name="description">
+        <meta content="kener.linfeng@gmail.com" name="author">
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 
-        <link rel="stylesheet" href="css/reveal.min.css">
-        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link href="css/reveal.min.css" rel="stylesheet">
+        <link href="css/theme/default.css" id="theme" rel="stylesheet">
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link href="lib/css/zenburn.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/echarts-slide.css">
+        <link href="css/echarts-slide.css" rel="stylesheet">
         
         <!-- Fav and touch icons -->
-        <link rel="shortcut icon" href="../asset/ico/favicon.png">
+        <link href="../asset/ico/favicon.png" rel="shortcut icon">
 
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
@@ -104,7 +104,7 @@
 
     <body>
         <a href="https://github.com/ecomfe/echarts" target="_blank">
-            <img style="position:absolute;top:0;right:0;border:0;z-index:1000" src="img/fork.png" alt="Fork me on GitHub">
+            <img alt="Fork me on GitHub" src="img/fork.png" style="position:absolute;top:0;right:0;border:0;z-index:1000">
         </a>
         <div class="reveal">
             <!-- Any section element inside of this container is displayed as a slide -->
@@ -178,7 +178,7 @@
                         <small>If the data presented is important to the users, then they will not satisfied to see a visual chart.</small>
                     </p>
                     <p class="fragment">
-                        <small>This is <a href="http://ecomfe.github.io/echarts/" target="_blank">ECharts</a>, Try to <strong>click</strong><img src="./img/iconDataView.png" class="echarts-icon"/>!
+                        <small>This is <a href="http://ecomfe.github.io/echarts/" target="_blank">ECharts</a>, Try to <strong>click</strong><img class="echarts-icon" src="./img/iconDataView.png"/>!
                             <br/>You can even <strong>edit</strong> your data and update the chart! Compared with Drag-Recalculate, this is batch operation!
                         </small>
                     </p>
@@ -194,7 +194,7 @@
                         </p>
                         <p class="fragment">
                             <small>This is <a href="http://ecomfe.github.io/echarts/" target="_blank">ECharts</a>, you can switch the chart magicly!
-                                Try to <strong>switch</strong> the bar chart<img src="./img/iconBarChart.png" class="echarts-icon"/>to the line chart<img src="./img/iconLineChart.png" class="echarts-icon"/>, or from stack to tiled<img src="./img/iconStack.png" class="echarts-icon"/>, maybe you will have more interpretation of this data.</small>
+                                Try to <strong>switch</strong> the bar chart<img class="echarts-icon" src="./img/iconBarChart.png"/>to the line chart<img class="echarts-icon" src="./img/iconLineChart.png"/>, or from stack to tiled<img class="echarts-icon" src="./img/iconStack.png"/>, maybe you will have more interpretation of this data.</small>
                         </p>
                         <div class="main" optionKey="magicType"></div>
                     </section>
@@ -243,7 +243,7 @@
                         <small>Display space is always limited, so we need Space Zoom, you can zoom the space easily.</small>
                     </p>
                     <p class="fragment">
-                        <small>This is <a href="http://ecomfe.github.io/echarts/" target="_blank">ECharts</a>, you can use the <strong>drag chooser</strong> at the bottom or the <strong>block chooser</strong><img src="./img/iconDataZoom.png" class="echarts-icon"/> to zoom in or <strong>back</strong><img src="./img/iconDataZoomReset.png" class="echarts-icon"/>! Of course, they are always in lockstep.
+                        <small>This is <a href="http://ecomfe.github.io/echarts/" target="_blank">ECharts</a>, you can use the <strong>drag chooser</strong> at the bottom or the <strong>block chooser</strong><img class="echarts-icon" src="./img/iconDataZoom.png"/> to zoom in or <strong>back</strong><img class="echarts-icon" src="./img/iconDataZoomReset.png"/>! Of course, they are always in lockstep.
                             <br/>Maybe you have found the <strong>Extreme MarkPoint</strong> and the <strong>Average MarkLine</strong> are also in lockstep.<br/>
                         </small>
                     </p>
@@ -261,8 +261,8 @@
                         <small>This is <a href="http://ecomfe.github.io/echarts/" target="_blank">ECharts</a>, we provide a capability called "Linkage".</small>
                     </p>
                     <div class="main" optionKey="multiCharts" style='height:210px;padding-bottom:0;border-bottom-width:0'></div>
-                    <div id="mcMain2" class="main2" style='height:140px;padding:1px 10px;border-width:0 1px;'></div>
-                    <div id="mcMain3" class="main2" style='height:100px;padding-top:1px;border-top-width:0'></div>
+                    <div class="main2" id="mcMain2" style='height:140px;padding:1px 10px;border-width:0 1px;'></div>
+                    <div class="main2" id="mcMain3" style='height:100px;padding-top:1px;border-top-width:0'></div>
                 </section>
                 
                 <section>
@@ -438,7 +438,7 @@
                                 <br/>And when you have a lots of data, you can try our <strong>Large-scale Glare MarkPoint Effects</strong>
                             </small>
                         </p>
-                        <div class="main" style="height:500px;background-color:transparent" optionKey="effect1"></div>
+                        <div class="main" optionKey="effect1" style="height:500px;background-color:transparent"></div>
                     </section>
                     <section>
                         <h4>[ Glare Effect ] Ability to attract the eye</h4>
@@ -448,7 +448,7 @@
                                 <br/>And when you have a lots of data, you can try our <strong>Large-scale Glare MarkPoint Effects</strong>
                             </small>
                         </p>
-                        <div class="main" style="height:500px;background-color:transparent" optionKey="effect2"></div>
+                        <div class="main" optionKey="effect2" style="height:500px;background-color:transparent"></div>
                     </section>
                     <section>
                         <h4>[ Glare Effect ] Ability to attract the eye</h4>
@@ -458,7 +458,7 @@
                                 <br/>And when you have a lots of data, you can try our <strong>Large-scale Glare MarkPoint Effects</strong>
                             </small>
                         </p>
-                        <div class="main" style="height:500px;background-color:transparent" optionKey="effect3"></div>
+                        <div class="main" optionKey="effect3" style="height:500px;background-color:transparent"></div>
                     </section>
                 </section>
                 

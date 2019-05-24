@@ -2,13 +2,13 @@
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ECharts">
-    <meta name="author" content="kener.linfeng@gmail.com">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ECharts" name="description">
+    <meta content="kener.linfeng@gmail.com" name="author">
     <title>ECharts · Doc</title>
 
-    <link rel="shortcut icon" href="./asset/ico/favicon.png">
+    <link href="./asset/ico/favicon.png" rel="shortcut icon">
 
     <link href="./asset/css/font-awesome.min.css" rel="stylesheet">
     <link href="./asset/css/bootstrap.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
 <body>
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="head"></div>
+    <div class="navbar navbar-default navbar-fixed-top" id="head" role="navigation"></div>
 
     <div class="container-fluid">
         <div class="row-fluid">
@@ -31,11 +31,11 @@
                 <div class="affix panel col-md-3" id="accordion">
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-description">
+                      <div class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse-description">
                         <strong>描述</strong>
                       </div>
                     </div>
-                    <div id="collapse-description" class="panel-collapse collapse in">
+                    <div class="panel-collapse collapse in" id="collapse-description">
                       <div class="panel-body">
                         <div id="toc">
                         <ul>
@@ -181,11 +181,11 @@
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-config">
+                      <div class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse-config">
                         <strong>默认选项</strong>
                       </div>
                     </div>
-                    <div id="collapse-config" class="panel-collapse collapse">
+                    <div class="panel-collapse collapse" id="collapse-config">
                       <div class="panel-body">
                         <div id="config"></div>
                       </div>
@@ -195,14 +195,14 @@
             </div>
             <div class="col-md-9">
                 <p style="margin:20px 0 -30px 0">
-                    <a href="./start.html" target="_blank" style="margin-right: 50px;">入门教程 ( Getting started ) »</a>
+                    <a href="./start.html" style="margin-right: 50px;" target="_blank">入门教程 ( Getting started ) »</a>
                     <a href="https://github.com/ecomfe/echarts/issues?page=1&state=open" target="_blank">Any feedback or question ? »</a>
                 </p>
                 <div id="doc">
                     <h3>简介<a name="简介"> </a></h3>
                     <p>ECharts，缩写来自Enterprise Charts，商业级数据图表，一个纯Javascript的图表库，可以流畅的运行在PC和移动设备上，兼容当前绝大部分浏览器（IE6/7/8/9/10/11，chrome，firefox，Safari等），底层依赖轻量级的Canvas类库<a href="http://ecomfe.github.io/zrender/" target="_blank">ZRender</a>，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。创新的拖拽重计算、数据视图、值域漫游等特性大大增强了用户体验，赋予了用户对数据进行挖掘、整合的能力。</P>
                     <p>支持折线图（区域图）、柱状图（条状图）、散点图（气泡图）、K线图、饼图（环形图）、雷达图（填充雷达图）、和弦图、力导向布局图、地图、仪表盘、漏斗图、事件河流图等12类图表，同时提供标题，详情气泡、图例、值域、数据区域、时间轴、工具箱等7个可交互组件，支持多图表、组件的联动和混搭展现。</P>
-                    <img src="asset/img/architecture.png"  alt="Echarts Architecture"/>
+                    <img alt="Echarts Architecture"  src="asset/img/architecture.png"/>
                     <h3>名词解析<a name="名词解析"> </a></h3>
                     <p>基本名词</p>
                     <table cellspacing="0" class="ADoc_table full">
@@ -343,7 +343,7 @@
                     </table>
                     <h3>图表类型<a name="图表类型"> </a></h3>
                     <P> 图表库标准包含单图表类型的标准图表以及多图表类型混合的混搭图表：</P>
-                    <p><img src="./asset/img/doc/charts.jpg" title="标准图表类型" alt="标准图表类型"/></P>
+                    <p><img alt="标准图表类型" src="./asset/img/doc/charts.jpg" title="标准图表类型"/></P>
 
                     <h4>单图表类型：line<a name="Line"> </a></h4>
                     <table cellspacing="0" class="ADoc_table full">
@@ -354,10 +354,10 @@
                             <th> 堆积区域图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/line1.png" title="" alt="折线图"/></td>
-                            <td><img src="./asset/img/example/line2.png" title="" alt="堆积折线图"/></td>
-                            <td><img src="./asset/img/example/line3.png" title="" alt="区域图"/></td>
-                            <td><img src="./asset/img/example/line4.png" title="" alt="堆积区域图"/></td>
+                            <td><img alt="折线图" src="./asset/img/example/line1.png" title=""/></td>
+                            <td><img alt="堆积折线图" src="./asset/img/example/line2.png" title=""/></td>
+                            <td><img alt="区域图" src="./asset/img/example/line3.png" title=""/></td>
+                            <td><img alt="堆积区域图" src="./asset/img/example/line4.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -370,10 +370,10 @@
                             <th> 堆积条形图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/bar1.png" title="" alt="柱形图"/></td>
-                            <td><img src="./asset/img/example/bar2.png" title="" alt="堆积柱形图"/></td>
-                            <td><img src="./asset/img/example/bar3.png" title="" alt="条形图"/></td>
-                            <td><img src="./asset/img/example/bar4.png" title="" alt="堆积条形图"/></td>
+                            <td><img alt="柱形图" src="./asset/img/example/bar1.png" title=""/></td>
+                            <td><img alt="堆积柱形图" src="./asset/img/example/bar2.png" title=""/></td>
+                            <td><img alt="条形图" src="./asset/img/example/bar3.png" title=""/></td>
+                            <td><img alt="堆积条形图" src="./asset/img/example/bar4.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -384,9 +384,9 @@
                             <th> 气泡图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/scatter1.png" title="" alt="散点图"/></td>
-                            <td><img src="./asset/img/example/dataRange1.png" title="" alt="散点图"/></td>
-                            <td><img src="./asset/img/example/scatter2.png" title="" alt="气泡图"/></td>
+                            <td><img alt="散点图" src="./asset/img/example/scatter1.png" title=""/></td>
+                            <td><img alt="散点图" src="./asset/img/example/dataRange1.png" title=""/></td>
+                            <td><img alt="气泡图" src="./asset/img/example/scatter2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -396,8 +396,8 @@
                             <th colspan="2"> K线图 </th>
                         </tr>
                         <tr>
-                            <td style="text-align:center"><img src="./asset/img/example/k1.png" title="" alt="K线图" /></td>
-                            <td style="text-align:center"><img src="./asset/img/example/k.png" title="" alt="K线图" /></td>
+                            <td style="text-align:center"><img alt="K线图" src="./asset/img/example/k1.png" title="" /></td>
+                            <td style="text-align:center"><img alt="K线图" src="./asset/img/example/k.png" title="" /></td>
                         </tr>
                     </table>
 
@@ -409,9 +409,9 @@
                             <th> 南丁格尔玫瑰图</th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/pie1.png" title="" alt="饼图"/></td>
-                            <td><img src="./asset/img/example/pie2.png" title="" alt="圆环图"/></td>
-                            <td><img src="./asset/img/example/pie4.png" title="" alt="南丁格尔玫瑰图"/></td>
+                            <td><img alt="饼图" src="./asset/img/example/pie1.png" title=""/></td>
+                            <td><img alt="圆环图" src="./asset/img/example/pie2.png" title=""/></td>
+                            <td><img alt="南丁格尔玫瑰图" src="./asset/img/example/pie4.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -422,8 +422,8 @@
                             <th> 填充雷达图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/radar1.png" title="" alt="雷达图"/></td>
-                            <td><img src="./asset/img/example/radar2.png" title="" alt="填充雷达图"/></td>
+                            <td><img alt="雷达图" src="./asset/img/example/radar1.png" title=""/></td>
+                            <td><img alt="填充雷达图" src="./asset/img/example/radar2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -433,8 +433,8 @@
                             <th colspan="2"> 和弦图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/chord1.png" title="" alt="和弦图"/></td>
-                            <td><img src="./asset/img/example/chord2.png" title="" alt="和弦图"/></td>
+                            <td><img alt="和弦图" src="./asset/img/example/chord1.png" title=""/></td>
+                            <td><img alt="和弦图" src="./asset/img/example/chord2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -444,9 +444,9 @@
                             <th colspan="3"> 力导向布局图。 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/force1.png" title="" alt="力导向布局图"/></td>
-                            <td><img src="./asset/img/example/force2.png" title="" alt="力导向布局图"/></td>
-                            <td><img src="./asset/img/example/webkit-dep.png" title="" alt="力导向布局图"/></td>
+                            <td><img alt="力导向布局图" src="./asset/img/example/force1.png" title=""/></td>
+                            <td><img alt="力导向布局图" src="./asset/img/example/force2.png" title=""/></td>
+                            <td><img alt="力导向布局图" src="./asset/img/example/webkit-dep.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -458,9 +458,9 @@
                             <th> 世界地图</th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/map1.png" title="" alt="中国地图"/></td>
-                            <td><img src="./asset/img/example/map3.png" title="" alt="全国34个省市自治区"/></td>
-                            <td><img src="./asset/img/example/map4.png" title="" alt="世界地图"/></td>
+                            <td><img alt="中国地图" src="./asset/img/example/map1.png" title=""/></td>
+                            <td><img alt="全国34个省市自治区" src="./asset/img/example/map3.png" title=""/></td>
+                            <td><img alt="世界地图" src="./asset/img/example/map4.png" title=""/></td>
                         </tr>
                         <tr>
                             <th> 子区域模式 </th>
@@ -468,9 +468,9 @@
                             <th> SVG扩展</th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/map8.png" title="" alt="子区域模式"/></td>
-                            <td><img src="./asset/img/example/map6.png" title="" alt="标准GeoJson扩展"/></td>
-                            <td><img src="./asset/img/example/map16.png" title="" alt="SVG扩展"/></td>
+                            <td><img alt="子区域模式" src="./asset/img/example/map8.png" title=""/></td>
+                            <td><img alt="标准GeoJson扩展" src="./asset/img/example/map6.png" title=""/></td>
+                            <td><img alt="SVG扩展" src="./asset/img/example/map16.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -480,9 +480,9 @@
                             <th colspan="3"> 热力图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/heatmap.png" title="" alt="热力图"/></td>
-                            <td><img src="./asset/img/example/heatmap2.png" title="" alt="热力图"/></td>
-                            <td><img src="./asset/img/example/heatmap_map.png" title="" alt="热力图"/></td>
+                            <td><img alt="热力图" src="./asset/img/example/heatmap.png" title=""/></td>
+                            <td><img alt="热力图" src="./asset/img/example/heatmap2.png" title=""/></td>
+                            <td><img alt="热力图" src="./asset/img/example/heatmap_map.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -492,8 +492,8 @@
                             <th colspan=2> 仪表盘 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/gauge4.png" title="" alt="仪表盘"/></td>
-                            <td><img src="./asset/img/example/gauge3.png" title="" alt="仪表盘"/></td>
+                            <td><img alt="仪表盘" src="./asset/img/example/gauge4.png" title=""/></td>
+                            <td><img alt="仪表盘" src="./asset/img/example/gauge3.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -503,9 +503,9 @@
                             <th colspan=3> 漏斗图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/funnel1.png" title="" alt="漏斗图"/></td>
-                            <td><img src="./asset/img/example/funnel2.png" title="" alt="漏斗图"/></td>
-                            <td><img src="./asset/img/example/funnel3.png" title="" alt="漏斗图"/></td>
+                            <td><img alt="漏斗图" src="./asset/img/example/funnel1.png" title=""/></td>
+                            <td><img alt="漏斗图" src="./asset/img/example/funnel2.png" title=""/></td>
+                            <td><img alt="漏斗图" src="./asset/img/example/funnel3.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -515,8 +515,8 @@
                             <th colspan=3> 事件河流图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/eventRiver1.png" title="" alt="事件河流图"/></td>
-                            <td><img src="./asset/img/example/eventRiver2.png" title="" alt="事件河流图"/></td>
+                            <td><img alt="事件河流图" src="./asset/img/example/eventRiver1.png" title=""/></td>
+                            <td><img alt="事件河流图" src="./asset/img/example/eventRiver2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -526,8 +526,8 @@
                             <th colspan=2> 矩形树图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/treemap.png" title="" alt="矩形树图"/></td>
-                            <td><img src="./asset/img/example/treemap1.png" title="" alt="矩形树图"/></td>
+                            <td><img alt="矩形树图" src="./asset/img/example/treemap.png" title=""/></td>
+                            <td><img alt="矩形树图" src="./asset/img/example/treemap1.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -537,7 +537,7 @@
                             <th colspan=1> 韦恩图类型 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/venn.png" title="" alt="韦恩图"/></td>
+                            <td><img alt="韦恩图" src="./asset/img/example/venn.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -547,8 +547,8 @@
                             <th colspan=2> 树图 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/tree1.png" title="" alt="树图"/></td>
-                            <td><img src="./asset/img/example/tree2.png" title="" alt="树图"/></td>
+                            <td><img alt="树图" src="./asset/img/example/tree1.png" title=""/></td>
+                            <td><img alt="树图" src="./asset/img/example/tree2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -558,7 +558,7 @@
                             <th colspan=2> 字符云 </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/wordCloud.png" title="" alt="树图"/></td>
+                            <td><img alt="树图" src="./asset/img/example/wordCloud.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -682,7 +682,7 @@ require.config({
                         <li>为模块加载器配置echarts的路径，从当前页面链接到echarts.js所在目录，见上述说明</li>
                         <li>动态加载echarts及所需图表然后在回调函数中开始使用（容我罗嗦一句，当你确保同一页面已经加载过echarts，再使用时直接require('echarts').init(dom)就行）</li>
                     </ol>
-                    <p>详见<a href="./start.html" target="_blank" style="margin-right: 50px;">入门教程 ( Getting started ) »</a></p>
+                    <p>详见<a href="./start.html" style="margin-right: 50px;" target="_blank">入门教程 ( Getting started ) »</a></p>
 
                     <h3>标签式单文件引入<a name="引入ECharts3"> </a></h3>
                     <P>自1.3.5开始，ECharts提供标签式引入。如果你的项目本身并不是基于模块化开发的，或者是基于CMD规范（如使用的是seajs），那么引入基于AMD模块化的echarts可能并不方便，我们建议你采用srcipt标签式引入，忘掉require。Srcipt标签引入echarts后将可以直接使用两个全局的命名空间：echarts，zrender，可参考<a href="example/www2/index.html" target="_blank">ECharts标签式引入</a>，需要注意的是excanvas依赖body标签插入Canvas节点去判断Canvas的支持，如果你把引用echarts的script标签放置head内在IE8-的浏览器中会出现报错，解决的办法就是把标签移动到body内（后）。</p>
@@ -708,7 +708,7 @@ require.config({
                         <li>dist/echarts-all.js : 经过压缩，全图表，包含world，china以及34个省市级地图数据</li>
                         <li>source/echarts-all.js : 未压缩，全图表，包含world，china以及34个省市级地图数据，可用于调试</li>
                     </ul>
-                    <p>详见<a href="./start.html" target="_blank" style="margin-right: 50px;">入门教程 ( Getting started ) »</a></p>
+                    <p>详见<a href="./start.html" style="margin-right: 50px;" target="_blank">入门教程 ( Getting started ) »</a></p>
 
                     <h3>自定义构建echarts单文件<a name="自定义构建echarts单文件"></a></h3>
                     <p>详见 echarts-optimizer 安装使用说明：<a href="https://github.com/ecomfe/echarts-optimizer/blob/master/README.md" target="_blank">README.md</a></p>
@@ -1267,7 +1267,7 @@ require(['echarts'], function (ec){
                             <td> 时间轴列表，同时也是轴label内容 </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/timeline.png" title="" alt="时间轴"/></P>
+                    <p><img alt="时间轴" src="./asset/img/doc/timeline.png" title=""/></P>
 
 
                     <h4>title<a name="Title"> </a></h4>
@@ -1383,7 +1383,7 @@ require(['echarts'], function (ec){
                         </tr>
 
                     </table>
-                    <p><img src="./asset/img/doc/title.png" title="" alt="标题"/></P>
+                    <p><img alt="标题" src="./asset/img/doc/title.png" title=""/></P>
 
 
                     <h4>toolbox<a name="Toolbox"> </a></h4>
@@ -1545,7 +1545,7 @@ require(['echarts'], function (ec){
 }
                               </pre></td>
                             <td> 启用功能，目前支持feature见下，工具箱自定义功能回调处理，见<a href="example/toolbox.html" target="_blank">try this »</a>
-                            <p><img src="./asset/img/doc/toolbox.png" title="" alt="工具箱"/></P>
+                            <p><img alt="工具箱" src="./asset/img/doc/toolbox.png" title=""/></P>
                             <ul>
                                 <li>
                                     mark，辅助线标志，上图icon左数1/2/3，分别是启用，删除上一条，删除全部，可设置更多属性
@@ -1777,8 +1777,8 @@ require(['echarts'], function (ec){
                             <th> axis触发 </th>
                         </tr>
                         <tr>
-                            <td style="text-align:center"><img src="./asset/img/doc/tooltip1.jpg" title="" alt="item触发"/></td>
-                            <td style="text-align:center"><img src="./asset/img/doc/tooltip2.jpg" title="" alt="axis触发"/></td>
+                            <td style="text-align:center"><img alt="item触发" src="./asset/img/doc/tooltip1.jpg" title=""/></td>
+                            <td style="text-align:center"><img alt="axis触发" src="./asset/img/doc/tooltip2.jpg" title=""/></td>
                         </tr>
                     </table>
 
@@ -1886,7 +1886,7 @@ require(['echarts'], function (ec){
                             </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/legend.png" title="" alt="图例"/></P>
+                    <p><img alt="图例" src="./asset/img/doc/legend.png" title=""/></P>
 
                     <h4>dataRange<a name="DataRange"> </a></h4>
                     <P> 值域选择，每个图表最多仅有一个值域控件。<a href="example/dataRange.html" target="_blank">try this »</a></P>
@@ -2046,7 +2046,7 @@ require(['echarts'], function (ec){
                             <td> 默认只设定了值域控件文字颜色（详见<a href="#TextStyle" title="">textStyle</a>） </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataRange.png" title="" alt="值域"/></P>
+                    <p><img alt="值域" src="./asset/img/doc/dataRange.png" title=""/></P>
 
                     <h4>dataZoom<a name="DataZoom"> </a></h4>
                     <P> 数据区域缩放。与toolbox.feature.dataZoom同步，仅对直角坐标系图表有效。<a href="example/dataZoom.html" target="_blank">try this »</a></P>
@@ -2157,7 +2157,7 @@ require(['echarts'], function (ec){
                             <td> 数据缩放锁，默认为false，当设置为true时选择区域不能伸缩，即(end - start)值保持不变，仅能做数据漫游。</td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataZoom.png" title="" alt="数据区域缩放"/></P>
+                    <p><img alt="数据区域缩放" src="./asset/img/doc/dataZoom.png" title=""/></P>
 
                     <h4>roamController<a name="RoamController"> </a></h4>
                     <P> 缩放漫游组件，仅对地图有效。<a href="example/map1.html" target="_blank">try this »</a></P>
@@ -2243,7 +2243,7 @@ require(['echarts'], function (ec){
                             <td> 必须，指定漫游组件可控地图类型，如：{ china: true }<br/>当同一图表内同时呈现多个地图时，可以单独指定所需控制地图类型，如：{ china: false, '北京': true} </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/roamController.png" title="" alt="缩放漫游组件"/></P>
+                    <p><img alt="缩放漫游组件" src="./asset/img/doc/roamController.png" title=""/></P>
 
                     <h4>grid<a name="Grid"> </a></h4>
                     <P> 直角坐标系内绘图网格</P>
@@ -2311,7 +2311,7 @@ require(['echarts'], function (ec){
                             <td> 边框颜色。 </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/grid.jpg" title="" alt="绘图网格"/></P>
+                    <p><img alt="绘图网格" src="./asset/img/doc/grid.jpg" title=""/></P>
 
                     <h4>xAxis<a name="Xaxis"> </a></h4>
                     <P>直角坐标系中横轴数组，数组中每一项代表一条横轴坐标轴，仅有一条时可省略数组。最多同时存在2条横轴，单条横轴时可指定安放于<a href="#Grid" title="">grid</a>的底部（默认）或顶部，2条同时存在时位置互斥，默认第一条安放于底部，第二条安放于顶部。</p>
@@ -2478,8 +2478,8 @@ require(['echarts'], function (ec){
                         </tr>
                         <tr>
                             <th> 效果 </th>
-                            <td><img src="./asset/img/doc/axisBoundaryGap1.jpg" title="" alt="axisBoundaryGap1"/></td>
-                            <td><img src="./asset/img/doc/axisBoundaryGap.png" title="" alt="axisBoundaryGap"/></td>
+                            <td><img alt="axisBoundaryGap1" src="./asset/img/doc/axisBoundaryGap1.jpg" title=""/></td>
+                            <td><img alt="axisBoundaryGap" src="./asset/img/doc/axisBoundaryGap.png" title=""/></td>
                         </tr>
                     </table>
                     <P> scale策略</P>
@@ -2491,12 +2491,12 @@ require(['echarts'], function (ec){
                         </tr>
                         <tr>
                             <th> 效果 </th>
-                            <td><img src="./asset/img/doc/axisScale1.png" title="" alt="axisScale1"/></td>
-                            <td><img src="./asset/img/doc/axisScale2.png" title="" alt="axisScale2"/></td>
+                            <td><img alt="axisScale1" src="./asset/img/doc/axisScale1.png" title=""/></td>
+                            <td><img alt="axisScale2" src="./asset/img/doc/axisScale2.png" title=""/></td>
                         </tr>
                     </table>
                     <P> axis属性说明</P>
-                    <p><img src="./asset/img/doc/axisDetail.png" title="" alt="axisDetail"/></P>
+                    <p><img alt="axisDetail" src="./asset/img/doc/axisDetail.png" title=""/></P>
 
                     <h5>axis.axisLine<a name="AxisAxisline"> </a></h5>
                     <P> 坐标轴线，默认显示且带如下样式：</P>
@@ -5213,7 +5213,7 @@ geoCoord : {
                         <li>通过 option.series.* 设置特定系列特殊配置，其优先级高于 option 内的同名配置；</li>
                         <li>通过 option.series.data.* 设置特定数据项的特殊配置，最高优先级；</li>
                     </ul>
-                    <p><img src="./asset/img/doc/multiControl.jpg" title="" alt="多级控制"/></P>
+                    <p><img alt="多级控制" src="./asset/img/doc/multiControl.jpg" title=""/></P>
 
                     <h3>附录：地图扩展<a name="附录地图扩展"> </a></h3>
                     <p>支持百度地图作为地图源叠加echarts可视化功能，
@@ -5420,7 +5420,7 @@ option.series = [
                             <td> 值域控件颜色相关，获取传入的值所对应的颜色<br/>参数：<b>{number}</b> value （值）<br/> 返回：<b>{color}</b> 匹配颜色</td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataRange.png" title="" alt="值域"/></P>
+                    <p><img alt="值域" src="./asset/img/doc/dataRange.png" title=""/></P>
 
                     <h4>dataZoom<a name="DataZoomInterface"> </a></h4>
                     <P>数据区域缩放。与toolbox.feature.dataZoom同步，仅对直角坐标系图表有效。可使用的属性和方法有：</P>
@@ -5441,7 +5441,7 @@ option.series = [
                             <td> 数据区域缩放控制<br/>参数：<b>{Object}</b> {start : value, end : value, start2 : value, end2 : value} （缩放参数）<br/> 返回：无，作用：根据传入的value改变数据显示区域，value有效值为[0,100]，一般仅指定主区域控制start、end即可，在散点图中可以同时做两个维度的区域缩放，可通过额外指定start2、end2实现。</td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataZoom.png" title="" alt="数据区域缩放"/></P>
+                    <p><img alt="数据区域缩放" src="./asset/img/doc/dataZoom.png" title=""/></P>
 
                     <h4>grid<a name="GridInterface"> </a></h4>
                     <P>直角坐标系内绘图网格。可使用的属性和方法有：</P>
@@ -5492,7 +5492,7 @@ option.series = [
                             <td> 网格实际区域数据，等同一次返回getX，getY，getWidth，getHeight。<br/>参数：无 <br/> 返回：<b>{Object}</b> {x : value, y : value, width : value, height : value}</td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/grid.jpg" title="" alt="绘图网格"/></P>
+                    <p><img alt="绘图网格" src="./asset/img/doc/grid.jpg" title=""/></P>
 
                     <h4>xAxis/yAxis<a name="AxisInterface"> </a></h4>
                     <P>横纵坐标轴。可使用的属性和方法有：</P>
@@ -5700,7 +5700,7 @@ myChart.dispose();
     <footer id="footer"></footer>
 
     <script src="./asset/js/jquery.min.js"></script>
-    <script type="text/javascript" src="./asset/js/echartsHome.js"></script>
+    <script src="./asset/js/echartsHome.js" type="text/javascript"></script>
     <script src="./asset/js/bootstrap.min.js"></script>
     <script src="asset/js/echartsConfig.js"></script>
     <script src="asset/js/echartsDoc.js"></script>

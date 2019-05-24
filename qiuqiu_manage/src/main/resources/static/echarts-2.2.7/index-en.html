@@ -2,13 +2,13 @@
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ECharts">
-    <meta name="author" content="kener.linfeng@gmail.com">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ECharts" name="description">
+    <meta content="kener.linfeng@gmail.com" name="author">
     <title>ECharts · Home</title>
     
-    <link rel="shortcut icon" href="./doc/asset/ico/favicon.png">
+    <link href="./doc/asset/ico/favicon.png" rel="shortcut icon">
     
     <link href="./doc/asset/css/font-awesome.min.css" rel="stylesheet">
     <link href="./doc/asset/css/bootstrap.css" rel="stylesheet">
@@ -28,29 +28,29 @@
 
   <body>
 
-    <img id="logo" src="doc/asset/img/logo.png" style="display:none;" alt="">
+    <img alt="" id="logo" src="doc/asset/img/logo.png" style="display:none;">
 
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="head"></div>
+    <div class="navbar navbar-default navbar-fixed-top" id="head" role="navigation"></div>
 
      <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel slide" data-ride="carousel" id="myCarousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-slide-to="0" data-target="#myCarousel"></li>
+        <li data-slide-to="1" data-target="#myCarousel"></li>
+        <li data-slide-to="2" data-target="#myCarousel"></li>
+        <li data-slide-to="3" data-target="#myCarousel"></li>
+        <li class="active" data-slide-to="4" data-target="#myCarousel"></li>
+        <li data-slide-to="5" data-target="#myCarousel"></li>
       </ol>
       <div class="carousel-inner">
         <div class="item">
-          <img src="./doc/asset/img/banner1.png" alt="ECharts"/>
+          <img alt="ECharts" src="./doc/asset/img/banner1.png"/>
         </div>
         <div class="item">
-          <img src="./doc/asset/img/banner2.png" alt="ECharts"/>
+          <img alt="ECharts" src="./doc/asset/img/banner2.png"/>
           <div class="container">
             <div class="carousel-caption" style="bottom:0;left:25%">
               <p style="text-align:left;">
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="./doc/asset/img/banner3.png" alt="ECharts"/>
+          <img alt="ECharts" src="./doc/asset/img/banner3.png"/>
           <div class="container">
             <div class="carousel-caption" style="bottom:0;left:25%">
               <p style="text-align:left;">
@@ -70,7 +70,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="./doc/asset/img/banner4.png" alt="ECharts"/>
+          <img alt="ECharts" src="./doc/asset/img/banner4.png"/>
           <div class="container">
             <div class="carousel-caption" style="bottom:0;left:25%">
               <p style="text-align:left;">
@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="item active">
-          <img src="./doc/asset/img/bannerStudy.png" alt="ECharts基础教程" style="width:100%;left:0;margin:0"/>
+          <img alt="ECharts基础教程" src="./doc/asset/img/bannerStudy.png" style="width:100%;left:0;margin:0"/>
           <div class="container">
             <div class="carousel-caption ecx-link">
                 <a href="http://study.163.com/course/courseMain.htm?courseId=1016007" target="_blank">了解更多 »</a>
@@ -88,7 +88,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="./doc/asset/img/bannerX.jpg" alt="ECharts-X" style="width:100%;left:0;margin:0"/>
+          <img alt="ECharts-X" src="./doc/asset/img/bannerX.jpg" style="width:100%;left:0;margin:0"/>
           <div class="container">
             <div class="carousel-caption ecx-link">
                 <a href="http://ecomfe.github.io/echarts-x" target="_blank">View »</a>
@@ -97,8 +97,8 @@
         </div>
 
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a class="left carousel-control" data-slide="prev" href="#myCarousel"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" data-slide="next" href="#myCarousel"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
     <!-- Marketing messaging and featurettes
@@ -110,17 +110,17 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="col-lg-12" src="doc/asset/img/feature1.png"  alt="Echarts Drag-Recalculate" style="margin-bottom:20px"/>
+          <img alt="Echarts Drag-Recalculate" class="col-lg-12"  src="doc/asset/img/feature1.png" style="margin-bottom:20px"/>
           <h2>DRAG-RECALCULATE</h2>
           <p class="text-left">Our "Drag-Recalculate" feature (patented) brings you the best user experience ever: by allowing you to effectively extract, integrate, or even exchange data among multiple charts, ECharts opens you up every opportunity for data mining and integration.</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="col-lg-12" src="doc/asset/img/feature2.png"  alt="Echarts dataView" style="margin-bottom:20px"/>
+          <img alt="Echarts dataView" class="col-lg-12"  src="doc/asset/img/feature2.png" style="margin-bottom:20px"/>
           <h2>BIG DATA MODE</h2>
           <p class="text-left">Got tens of millions of data to present? And once again professional statistical tools (e.g. MATLAB) seem like the only option left? Nope, not anymore! Despite rich interactivity, ECharts can still plot up to 200,000 data points on a Cartesian chart (line, column, scatter, candlestick) in the blink of an eye. </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="col-lg-12" src="doc/asset/img/feature3.png"  alt="Echarts Scale Roaming" style="margin-bottom:20px"/>
+          <img alt="Echarts Scale Roaming" class="col-lg-12"  src="doc/asset/img/feature3.png" style="margin-bottom:20px"/>
           <h2>SCALE ROAMING</h2>
           <p class="text-left">The colors in the Cartesian chart (like map or scatter) will help you to classify data at first glance. But how to focus on data that matters after the initial analysis? With our "Scale Roaming" feature, you can turn off other scales and focus on the scale you are interested in with just a click.</p>
         </div><!-- /.col-lg-4 -->
@@ -183,14 +183,14 @@
         
         
         <div class="col-md-12 user text-center">
-            <a href="http://www.baidu.com" target="_blank" ><img src="http://www.baidu.com/img/baidu_jgylogo3.gif" alt="到百度首页" title="到百度首页"></a>
-            <a href="http://dev2.baidu.com/index.do" target="_blank" ><img src="http://dev2.baidu.com/zh/img/zh-logo.jpg" alt="百度商业开发者中心" title="百度商业开发者中心"></a>
-            <a href="http://zhanzhang.baidu.com/" target="_blank" ><img src="http://zhanzhang.baidu.com/static/img/zhanzhang_logo.png" alt="百度站长平台" title="百度站长平台"></a>
+            <a href="http://www.baidu.com" target="_blank" ><img alt="到百度首页" src="http://www.baidu.com/img/baidu_jgylogo3.gif" title="到百度首页"></a>
+            <a href="http://dev2.baidu.com/index.do" target="_blank" ><img alt="百度商业开发者中心" src="http://dev2.baidu.com/zh/img/zh-logo.jpg" title="百度商业开发者中心"></a>
+            <a href="http://zhanzhang.baidu.com/" target="_blank" ><img alt="百度站长平台" src="http://zhanzhang.baidu.com/static/img/zhanzhang_logo.png" title="百度站长平台"></a>
             <a href="http://adm.baidu.com/index.html" target="_blank" ><img src="doc/asset/img/logo/adm_logo.png"></a>
             <a href="http://jiaoyu.baidu.com/mp/index" target="_blank" ><img src="http://vs-static.baidu.com/edu/newjuhe/asset/img/logo137.png"></a>
             <a href="http://jiankang.baidu.com/" target="_blank" ><img src="doc/asset/img/logo/health_logo.png"></a>
             <a href="http://wenku.baidu.com/" target="_blank" ><img src="http://static.wenku.bdimg.com/static/widget/common/header/search_box/images/logo-wk-137-46_3164f22b.png"></a>
-            <a href="http://hui.baidu.com/" target="_blank" ><img src="doc/asset/img/logo/hui_logo.png" alt="百度汇" title="百度汇"></a>
+            <a href="http://hui.baidu.com/" target="_blank" ><img alt="百度汇" src="doc/asset/img/logo/hui_logo.png" title="百度汇"></a>
             
             <a href="http://yuedu.baidu.com/" target="_blank" ><img src="http://static.wenku.bdimg.com/static/widget/common/read/header/images/read_logo_657abbba.png"></a>
             <a href="http://sd.baidu.com/zh/" target="_blank" ><img src="doc/asset/img/logo/sd_logo.png"></a>
@@ -250,23 +250,23 @@
       <div class="row featurette e-list" style="padding-bottom: 0;">
         <p>ECharts is an open source from the data visualization team of Baidu <a href="http://efe.baidu.com/">EFE</a>. In <a href="http://efe.baidu.com/">EFE</a>, we also have:</p> 
         <dl>
-            <dt><a target="_blank" href="https://github.com/ecomfe/esl">ESL</a></dt>
+            <dt><a href="https://github.com/ecomfe/esl" target="_blank">ESL</a></dt>
             <dd>Leaner, more efficient and more robust AMD Loader than Require.js.</dd>
-            <dt><a target="_blank" href="http://ecomfe.github.io/etpl/">ETpl</a></dt>
+            <dt><a href="http://ecomfe.github.io/etpl/" target="_blank">ETpl</a></dt>
             <dd>Reusable, flexible, and high performance JavaScript template engine.</dd>
-            <dt><a target="_blank" href="http://ecomfe.github.io/edp/">EDP</a></dt>
+            <dt><a href="http://ecomfe.github.io/edp/" target="_blank">EDP</a></dt>
             <dd>Provides the front-end development tool: project and package management, debug, build, test etc. and allow users to custom extend.</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/er">ER</a></dt>
+            <dt><a href="https://github.com/ecomfe/er" target="_blank">ER</a></dt>
             <dd>RIA web framework, which is suitable for building a single page AJAX web application.</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/esui">ESUI</a></dt>
+            <dt><a href="https://github.com/ecomfe/esui" target="_blank">ESUI</a></dt>
             <dd>A set of perfect functions, and has strong extension mechanism UI library. Base on template, declarative programming let the View more powerful.</dd>
-            <dt><a target="_blank" href="http://ecomfe.github.io/est/">EST</a></dt>
+            <dt><a href="http://ecomfe.github.io/est/" target="_blank">EST</a></dt>
             <dd>Base on Less style, provide a series of convenient mixin way, can output just in debug mode.</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/saber">Saber</a></dt>
+            <dt><a href="https://github.com/ecomfe/saber" target="_blank">Saber</a></dt>
             <dd>Provide a JavaScript model, CSS style and development platform etc, which is a complete the front-end solutions for mobile SPA project.</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/rider">Rider</a></dt>
+            <dt><a href="https://github.com/ecomfe/rider" target="_blank">Rider</a></dt>
             <dd>Designed for mobile device, mixin style library. Base on it, we create the Rider UI, a flexible UI library.</dd>
-            <dt><a target="_blank" href="http://efe.baidu.com/">......</a></dt>
+            <dt><a href="http://efe.baidu.com/" target="_blank">......</a></dt>
         </dl>
       </div>
     </div><!-- /.container -->
@@ -278,7 +278,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./doc/asset/js/jquery.min.js"></script>
-    <script type="text/javascript" src="./doc/asset/js/echartsHome.js"></script>
+    <script src="./doc/asset/js/echartsHome.js" type="text/javascript"></script>
     <script src="./doc/asset/js/bootstrap.min.js"></script>
   </body>
 </html>

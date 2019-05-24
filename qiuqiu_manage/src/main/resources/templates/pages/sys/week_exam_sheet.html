@@ -11,7 +11,7 @@
 			<!-- /.试题 -->
 			<div>
 				<center>
-					<font size="6" color="green"><b>周考在线检测</b></font>
+					<font color="green" size="6"><b>周考在线检测</b></font>
 					<h1>
 						测试已开始 请开始作答  <span id="mytime">00:00:00</span>
 					</h1>
@@ -22,44 +22,44 @@
 				<!-- 第一道题 -->
 				<p>1.(单选题)下列关于修饰符混用的说法，错误的是（ D）</p>
 				<p>
-					<input type="radio" name="Q1" value="1">A、abstract 不能与
-					final 并列修饰同一个类<br> <input type="radio" name="Q1" value="2">B、abstract
-					类中可以有 private 的成员<br> <input type="radio" name="Q1" value="3">C、abstract
-					方法可以放在 abstract 类或接口中<br> <input type="radio" name="Q1"
+					<input name="Q1" type="radio" value="1">A、abstract 不能与
+					final 并列修饰同一个类<br> <input name="Q1" type="radio" value="2">B、abstract
+					类中可以有 private 的成员<br> <input name="Q1" type="radio" value="3">C、abstract
+					方法可以放在 abstract 类或接口中<br> <input name="Q1" type="radio"
 						value="4">D、static 方法中能直接使用非 static 的属性<br>
 					<!-- D -->
 				</p>
 				<p>2.(单选题)JAVA 中（C）</p>
 				<p>
-					<input type="radio" name="Q2" value="1">A、一个子类可以有多个父类，一个父类也可以有多个子类<br>
-					<input type="radio" name="Q2" value="2">B、一个子类可以有多个父类，但一个父类只可以有一个子类<br>
-					<input type="radio" name="Q2" value="3">C、一个子类可以有一个父类，但一个父类可以有多个子类<br>
+					<input name="Q2" type="radio" value="1">A、一个子类可以有多个父类，一个父类也可以有多个子类<br>
+					<input name="Q2" type="radio" value="2">B、一个子类可以有多个父类，但一个父类只可以有一个子类<br>
+					<input name="Q2" type="radio" value="3">C、一个子类可以有一个父类，但一个父类可以有多个子类<br>
 					<!-- C -->
-					<input type="radio" name="Q2" value="4">D、上述说法都不对<br>
+					<input name="Q2" type="radio" value="4">D、上述说法都不对<br>
 				</p>
 				<p>3.(单选题)Java语言中，使用关键字那个对当前对象的父类对象进行引用（A）</p>
 				<p>
-					<input type="radio" name="Q3" value="1">A、super<br> <input
-						type="radio" name="Q3" value="2">B、this<br> <input
-						type="radio" name="Q3" value="3">C、new <br> <input
-						type="radio" name="Q3" value="4">D、extends<br>
+					<input name="Q3" type="radio" value="1">A、super<br> <input
+						name="Q3" type="radio" value="2">B、this<br> <input
+						name="Q3" type="radio" value="3">C、new <br> <input
+						name="Q3" type="radio" value="4">D、extends<br>
 					<!-- D -->
 				</p>
 				<p>4.(单选题)在创建对象时，必须（ ）</p>
 				<p>
-					<input type="radio" name="Q4" value="1">A、先声明对象，然后才能使用对象<br>
-					<input type="radio" name="Q4" value="2">B、先声明对象，为对象分配内存空间，然后才能使用对象<br>
-					<input type="radio" name="Q4" value="3">C、先声明对象，为对象分配内存空间，对对象初始化，然后才能使用对象<br>
+					<input name="Q4" type="radio" value="1">A、先声明对象，然后才能使用对象<br>
+					<input name="Q4" type="radio" value="2">B、先声明对象，为对象分配内存空间，然后才能使用对象<br>
+					<input name="Q4" type="radio" value="3">C、先声明对象，为对象分配内存空间，对对象初始化，然后才能使用对象<br>
 					<!-- C -->
-					<input type="radio" name="Q4" value="4">D、上述说法都对<br>
+					<input name="Q4" type="radio" value="4">D、上述说法都对<br>
 				</p>
 				<p>5.(单选题)HashSet子类依靠(c )方法区分重复元素。</p>
 				<p>
-					<input type="radio" name="Q5" value="1">A、toString(),equals()
-					<input type="radio" name="Q5" value="2">B、lone(),equals()
+					<input name="Q5" type="radio" value="1">A、toString(),equals()
+					<input name="Q5" type="radio" value="2">B、lone(),equals()
 					<!-- B -->
-					<input type="radio" name="Q5" value="3">C、hashCode(),equals()
-					<input type="radio" name="Q5" value="4">D、getClass(),clone()
+					<input name="Q5" type="radio" value="3">C、hashCode(),equals()
+					<input name="Q5" type="radio" value="4">D、getClass(),clone()
 				</p>
 				<button onclick="javascript:main();">交卷</button>
 				<h3>
@@ -73,7 +73,7 @@
 
 
 
-			<div id="pageId" class="box-footer clearfix"></div>
+			<div class="box-footer clearfix" id="pageId"></div>
 			<!-- /.box-body -->
 		</div>
 		<!-- /.box -->
@@ -87,7 +87,7 @@
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script type="text/javascript" language="javascript">
+<script language="javascript" type="text/javascript">
 
 
 function two_char(n) {

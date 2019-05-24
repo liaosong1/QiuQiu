@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<meta name="viewport" content="width=1150">
+		<meta content="width=1150" name="viewport">
 
 		<title>reveal.js - Slide Notes</title>
 
@@ -91,12 +91,12 @@
 
 	<body>
 
-		<div id="wrap-current-slide" class="slides">
-			<iframe src="/?receiver" width="1280" height="1024" id="current-slide"></iframe>
+		<div class="slides" id="wrap-current-slide">
+			<iframe height="1024" id="current-slide" src="/?receiver" width="1280"></iframe>
 		</div>
 
-		<div id="wrap-next-slide" class="slides">
-			<iframe src="/?receiver" width="640" height="512" id="next-slide"></iframe>
+		<div class="slides" id="wrap-next-slide">
+			<iframe height="512" id="next-slide" src="/?receiver" width="640"></iframe>
 			<span>UPCOMING:</span>
 		</div>
 		<div id="notes"></div>

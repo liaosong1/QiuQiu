@@ -2,32 +2,32 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
 <title>AdminLTE 2 | Calendar</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 <!-- Bootstrap 3.3.7 -->
-<link rel="stylesheet"
-	href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <!-- Font Awesome -->
-<link rel="stylesheet"
-	href="../bower_components/font-awesome/css/font-awesome.min.css">
+<link href="../bower_components/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
 <!-- Ionicons -->
-<link rel="stylesheet"
-	href="../bower_components/Ionicons/css/ionicons.min.css">
+<link href="../bower_components/Ionicons/css/ionicons.min.css"
+	rel="stylesheet">
 <!-- fullCalendar -->
-<link rel="stylesheet"
-	href="../bower_components/fullcalendar/dist/fullcalendar.min.css">
-<link rel="stylesheet"
-	href="../bower_components/fullcalendar/dist/fullcalendar.print.min.css"
-	media="print">
+<link href="../bower_components/fullcalendar/dist/fullcalendar.min.css"
+	rel="stylesheet">
+<link href="../bower_components/fullcalendar/dist/fullcalendar.print.min.css"
+	media="print"
+	rel="stylesheet">
 <!-- Theme style -->
-<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+<link href="../dist/css/AdminLTE.min.css" rel="stylesheet">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+<link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,22 +37,22 @@
   <![endif]-->
 
 <!-- Google Font -->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+	rel="stylesheet">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
 
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="../index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<a class="logo" href="../index2.html"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>教育管理</b>系统</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top">
 				<!-- Sidebar toggle button-->
-				<a href="#" class="sidebar-toggle" data-toggle="push-menu"
+				<a class="sidebar-toggle" data-toggle="push-menu" href="#"
 					role="button"> <span class="sr-only">Toggle navigation</span>
 				</a>
 
@@ -60,16 +60,16 @@
 					<ul class="nav navbar-nav">
 
 						<!-- User Account: style can be found in dropdown.less -->
-						<li class="dropdown user user-menu"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"> <img
-								src="../dist/img/user2-160x160.jpg" class="user-image"
-								alt="User Image"> <span class="hidden-xs">一休哥</span>
+						<li class="dropdown user user-menu"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#"> <img
+								alt="User Image" class="user-image"
+								src="../dist/img/user2-160x160.jpg"> <span class="hidden-xs">一休哥</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
 								<li class="user-header"><img
-									src="../dist/img/user2-160x160.jpg" class="img-circle"
-									alt="User Image">
+									alt="User Image" class="img-circle"
+									src="../dist/img/user2-160x160.jpg">
 
 									<p>
 										成功是失败的阶梯 <small>Member since Nov. 2012</small>
@@ -91,10 +91,10 @@
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-left">
-										<a href="#" class="btn btn-default btn-flat">个人信息</a>
+										<a class="btn btn-default btn-flat" href="#">个人信息</a>
 									</div>
 									<div class="pull-right">
-										<a href="#" class="btn btn-default btn-flat">注销登陆</a>
+										<a class="btn btn-default btn-flat" href="#">注销登陆</a>
 									</div>
 								</li>
 							</ul></li>
@@ -112,8 +112,8 @@
 				<!-- Sidebar user panel -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="../dist/img/user2-160x160.jpg" class="img-circle"
-							alt="User Image">
+						<img alt="User Image" class="img-circle"
+							src="../dist/img/user2-160x160.jpg">
 					</div>
 					<div class="pull-left info">
 						<p>一休哥</p>
@@ -121,12 +121,12 @@
 					</div>
 				</div>
 				<!-- search form -->
-				<form action="#" method="get" class="sidebar-form">
+				<form action="#" class="sidebar-form" method="get">
 					<div class="input-group">
-						<input type="text" name="q" class="form-control"
-							placeholder="Search..."> <span class="input-group-btn">
-							<button type="submit" name="search" id="search-btn"
-								class="btn btn-flat">
+						<input class="form-control" name="q" placeholder="Search..."
+							type="text"> <span class="input-group-btn">
+							<button class="btn btn-flat" id="search-btn" name="search"
+								type="submit">
 								<i class="fa fa-search"></i>
 							</button>
 						</span>
@@ -263,9 +263,9 @@
 		<aside class="control-sidebar control-sidebar-dark">
 			<!-- Create the tabs -->
 			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-				<li><a href="#control-sidebar-home-tab" data-toggle="tab"><i
+				<li><a data-toggle="tab" href="#control-sidebar-home-tab"><i
 						class="fa fa-home"></i></a></li>
-				<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i
+				<li><a data-toggle="tab" href="#control-sidebar-settings-tab"><i
 						class="fa fa-gears"></i></a></li>
 			</ul>
 			<!-- Tab panes -->
@@ -376,7 +376,7 @@
 
 						<div class="form-group">
 							<label class="control-sidebar-subheading"> Report panel
-								usage <input type="checkbox" class="pull-right" checked>
+								usage <input checked class="pull-right" type="checkbox">
 							</label>
 
 							<p>Some information about this general settings option</p>
@@ -385,7 +385,7 @@
 
 						<div class="form-group">
 							<label class="control-sidebar-subheading"> Allow mail
-								redirect <input type="checkbox" class="pull-right" checked>
+								redirect <input checked class="pull-right" type="checkbox">
 							</label>
 
 							<p>Other sets of options are available</p>
@@ -394,7 +394,7 @@
 
 						<div class="form-group">
 							<label class="control-sidebar-subheading"> Expose author
-								name in posts <input type="checkbox" class="pull-right" checked>
+								name in posts <input checked class="pull-right" type="checkbox">
 							</label>
 
 							<p>Allow the user to show his name in blog posts</p>
@@ -405,21 +405,21 @@
 
 						<div class="form-group">
 							<label class="control-sidebar-subheading"> Show me as
-								online <input type="checkbox" class="pull-right" checked>
+								online <input checked class="pull-right" type="checkbox">
 							</label>
 						</div>
 						<!-- /.form-group -->
 
 						<div class="form-group">
 							<label class="control-sidebar-subheading"> Turn off
-								notifications <input type="checkbox" class="pull-right">
+								notifications <input class="pull-right" type="checkbox">
 							</label>
 						</div>
 						<!-- /.form-group -->
 
 						<div class="form-group">
 							<label class="control-sidebar-subheading"> Delete chat
-								history <a href="javascript:void(0)" class="text-red pull-right"><i
+								history <a class="text-red pull-right" href="javascript:void(0)"><i
 									class="fa fa-trash-o"></i></a>
 							</label>
 						</div>

@@ -2,13 +2,13 @@
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ECharts">
-    <meta name="author" content="kener.linfeng@gmail.com">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ECharts" name="description">
+    <meta content="kener.linfeng@gmail.com" name="author">
     <title>ECharts · Doc</title>
 
-    <link rel="shortcut icon" href="./asset/ico/favicon.png">
+    <link href="./asset/ico/favicon.png" rel="shortcut icon">
 
     <link href="./asset/css/font-awesome.min.css" rel="stylesheet">
     <link href="./asset/css/bootstrap.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
 <body>
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="head"></div>
+    <div class="navbar navbar-default navbar-fixed-top" id="head" role="navigation"></div>
 
     <div class="container-fluid">
         <div class="row-fluid">
@@ -31,11 +31,11 @@
                 <div class="affix panel col-md-3" id="accordion">
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-description">
+                      <div class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse-description">
                         <strong>Contents</strong>
                       </div>
                     </div>
-                    <div id="collapse-description" class="panel-collapse collapse in">
+                    <div class="panel-collapse collapse in" id="collapse-description">
                       <div class="panel-body">
                         <div id="toc">
                         <ul>
@@ -183,11 +183,11 @@
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-config">
+                      <div class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse-config">
                         <strong>default options</strong>
                       </div>
                     </div>
-                    <div id="collapse-config" class="panel-collapse collapse">
+                    <div class="panel-collapse collapse" id="collapse-config">
                       <div class="panel-body">
                         <div id="config"></div>
                       </div>
@@ -197,14 +197,14 @@
             </div>
             <div class="col-md-9">
                 <p style="margin:20px 0 -30px 0">
-                    <a href="./start-en.html" target="_blank" style="margin-right: 50px;"> Getting started »</a>
+                    <a href="./start-en.html" style="margin-right: 50px;" target="_blank"> Getting started »</a>
                     <a href="https://github.com/ecomfe/echarts/issues?page=1&state=open" target="_blank">Any feedback or question? »</a>
                 </p>
                 <div id="doc">
                     <h3>Introduction<a name="Introduction"> </a></h3>
                     <p>ECharts (Enterprise Charts), written in pure JavaScript and based on <a href="http://ecomfe.github.io/zrender/" target="_blank">ZRender</a> (a whole new lightweight canvas library), is a comprehensive charting library offering an easy way of adding intuitive, interactive, and highly customizable charts to your commercial products. It works with all your web and mobile applications, including IE6/7/8/9/10/11, Chrome, Firefox, Safari and Opera. With original features like Drag-Recalculate, Data View and Scale Roaming, ECharts lets you mine and integrate data in ways you didn't think possible.</P>
                     <p>ECharts currently supports 12 chart types, including line (area), column (bar), scatter (bubble), pie (doughnut), radar (filled radar), candlestick, chord, gauge, funnel, map, eventRiver and force-directed chart. Each and every chart is equipped with 7 interactive components: title, tooltip, legend, scale, data area, timeline, and toolbox. Many of these components and charts can be combined in one chart.</P>
-                    <img src="asset/img/architecture.png"  alt="Echarts Architecture"/>
+                    <img alt="Echarts Architecture"  src="asset/img/architecture.png"/>
                     <h3>Glossary<a name="Glossary"> </a></h3>
                     <p>General Terms</p>
                     <table cellspacing="0" class="ADoc_table full">
@@ -342,7 +342,7 @@
                     </table>
                     <h3>Chart Types<a name="Chart-Types"> </a></h3>
                     <P> The charting library includes basic single chart type and combination chart type. </P>
-                    <p><img src="./asset/img/doc/charts.jpg" title="basic chart type" alt="basic chart type"/></P>
+                    <p><img alt="basic chart type" src="./asset/img/doc/charts.jpg" title="basic chart type"/></P>
 
                     <h4>single chart type: line<a name="Line"> </a></h4>
                     <table cellspacing="0" class="ADoc_table full">
@@ -353,10 +353,10 @@
                             <th> stacked area </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/line1.png" title="" alt="line"/></td>
-                            <td><img src="./asset/img/example/line2.png" title="" alt="stacked line"/></td>
-                            <td><img src="./asset/img/example/line3.png" title="" alt="area"/></td>
-                            <td><img src="./asset/img/example/line4.png" title="" alt="stacked area"/></td>
+                            <td><img alt="line" src="./asset/img/example/line1.png" title=""/></td>
+                            <td><img alt="stacked line" src="./asset/img/example/line2.png" title=""/></td>
+                            <td><img alt="area" src="./asset/img/example/line3.png" title=""/></td>
+                            <td><img alt="stacked area" src="./asset/img/example/line4.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -369,10 +369,10 @@
                             <th> stacked bar </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/bar1.png" title="" alt="column"/></td>
-                            <td><img src="./asset/img/example/bar2.png" title="" alt="stacked column"/></td>
-                            <td><img src="./asset/img/example/bar3.png" title="" alt="bar"/></td>
-                            <td><img src="./asset/img/example/bar4.png" title="" alt="stacked bar"/></td>
+                            <td><img alt="column" src="./asset/img/example/bar1.png" title=""/></td>
+                            <td><img alt="stacked column" src="./asset/img/example/bar2.png" title=""/></td>
+                            <td><img alt="bar" src="./asset/img/example/bar3.png" title=""/></td>
+                            <td><img alt="stacked bar" src="./asset/img/example/bar4.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -383,9 +383,9 @@
                             <th> bubble </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/scatter1.png" title="" alt="scatter"/></td>
-                            <td><img src="./asset/img/example/dataRange1.png" title="" alt="scatter"/></td>
-                            <td><img src="./asset/img/example/scatter2.png" title="" alt="bubble"/></td>
+                            <td><img alt="scatter" src="./asset/img/example/scatter1.png" title=""/></td>
+                            <td><img alt="scatter" src="./asset/img/example/dataRange1.png" title=""/></td>
+                            <td><img alt="bubble" src="./asset/img/example/scatter2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -395,8 +395,8 @@
                             <th colspan="2"> candlestick </th>
                         </tr>
                         <tr>
-                            <td style="text-align:center"><img src="./asset/img/example/k1.png" title="" alt="candlestick" /></td>
-                            <td style="text-align:center"><img src="./asset/img/example/k.png" title="" alt="candlestick" /></td>
+                            <td style="text-align:center"><img alt="candlestick" src="./asset/img/example/k1.png" title="" /></td>
+                            <td style="text-align:center"><img alt="candlestick" src="./asset/img/example/k.png" title="" /></td>
                         </tr>
                     </table>
 
@@ -408,9 +408,9 @@
                             <th> Nightingale’s rose diagram</th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/pie1.png" title="" alt="pie"/></td>
-                            <td><img src="./asset/img/example/pie2.png" title="" alt="doughnut"/></td>
-                            <td><img src="./asset/img/example/pie4.png" title="" alt="Nightingale’s rose diagram"/></td>
+                            <td><img alt="pie" src="./asset/img/example/pie1.png" title=""/></td>
+                            <td><img alt="doughnut" src="./asset/img/example/pie2.png" title=""/></td>
+                            <td><img alt="Nightingale’s rose diagram" src="./asset/img/example/pie4.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -421,8 +421,8 @@
                             <th> filled radar </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/radar1.png" title="" alt="radar"/></td>
-                            <td><img src="./asset/img/example/radar2.png" title="" alt="filled radar"/></td>
+                            <td><img alt="radar" src="./asset/img/example/radar1.png" title=""/></td>
+                            <td><img alt="filled radar" src="./asset/img/example/radar2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -432,8 +432,8 @@
                             <th colspan="2"> chord </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/chord1.png" title="" alt="chord"/></td>
-                            <td><img src="./asset/img/example/chord2.png" title="" alt="chord"/></td>
+                            <td><img alt="chord" src="./asset/img/example/chord1.png" title=""/></td>
+                            <td><img alt="chord" src="./asset/img/example/chord2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -443,9 +443,9 @@
                             <th colspan="3"> force-directed chart </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/force1.png" title="" alt="force-directed chart"/></td>
-                            <td><img src="./asset/img/example/force2.png" title="" alt="force-directed chart"/></td>
-                            <td><img src="./asset/img/example/webkit-dep.png" title="" alt="force-directed chart"/></td>
+                            <td><img alt="force-directed chart" src="./asset/img/example/force1.png" title=""/></td>
+                            <td><img alt="force-directed chart" src="./asset/img/example/force2.png" title=""/></td>
+                            <td><img alt="force-directed chart" src="./asset/img/example/webkit-dep.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -457,9 +457,9 @@
                             <th> World Map </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/map1.png" title="" alt="China Map"/></td>
-                            <td><img src="./asset/img/example/map3.png" title="" alt=" Map of China Provinces &amp; Cities"/></td>
-                            <td><img src="./asset/img/example/map4.png" title="" alt="World Map"/></td>
+                            <td><img alt="China Map" src="./asset/img/example/map1.png" title=""/></td>
+                            <td><img alt=" Map of China Provinces &amp; Cities" src="./asset/img/example/map3.png" title=""/></td>
+                            <td><img alt="World Map" src="./asset/img/example/map4.png" title=""/></td>
                         </tr>
                         <tr>
                             <th> Sub-Region Mode </th>
@@ -467,9 +467,9 @@
                             <th> SVG Extension</th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/map8.png" title="" alt="Sub-Region Mode"/></td>
-                            <td><img src="./asset/img/example/map6.png" title="" alt="Standard GeoJson Extension"/></td>
-                            <td><img src="./asset/img/example/map16.png" title="" alt="SVG Extension"/></td>
+                            <td><img alt="Sub-Region Mode" src="./asset/img/example/map8.png" title=""/></td>
+                            <td><img alt="Standard GeoJson Extension" src="./asset/img/example/map6.png" title=""/></td>
+                            <td><img alt="SVG Extension" src="./asset/img/example/map16.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -479,9 +479,9 @@
                             <th colspan="3"> heatmap </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/heatmap.png" title="" alt="heatmap"/></td>
-                            <td><img src="./asset/img/example/heatmap2.png" title="" alt="heatmap"/></td>
-                            <td><img src="./asset/img/example/heatmap_map.png" title="" alt="heatmap"/></td>
+                            <td><img alt="heatmap" src="./asset/img/example/heatmap.png" title=""/></td>
+                            <td><img alt="heatmap" src="./asset/img/example/heatmap2.png" title=""/></td>
+                            <td><img alt="heatmap" src="./asset/img/example/heatmap_map.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -491,8 +491,8 @@
                             <th colspan=2> angular gauge </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/gauge4.png" title="" alt="angular gauge"/></td>
-                            <td><img src="./asset/img/example/gauge3.png" title="" alt="angular gauge"/></td>
+                            <td><img alt="angular gauge" src="./asset/img/example/gauge4.png" title=""/></td>
+                            <td><img alt="angular gauge" src="./asset/img/example/gauge3.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -502,9 +502,9 @@
                             <th colspan=3> funnel </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/funnel1.png" title="" alt="funnel"/></td>
-                            <td><img src="./asset/img/example/funnel2.png" title="" alt="funnel"/></td>
-                            <td><img src="./asset/img/example/funnel3.png" title="" alt="funnel"/></td>
+                            <td><img alt="funnel" src="./asset/img/example/funnel1.png" title=""/></td>
+                            <td><img alt="funnel" src="./asset/img/example/funnel2.png" title=""/></td>
+                            <td><img alt="funnel" src="./asset/img/example/funnel3.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -514,8 +514,8 @@
                             <th colspan=3> eventRiver </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/eventRiver1.png" title="" alt="eventRiver"/></td>
-                            <td><img src="./asset/img/example/eventRiver2.png" title="" alt="eventRiver"/></td>
+                            <td><img alt="eventRiver" src="./asset/img/example/eventRiver1.png" title=""/></td>
+                            <td><img alt="eventRiver" src="./asset/img/example/eventRiver2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -525,8 +525,8 @@
                             <th colspan=2> Treemap </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/treemap.png" title="" alt="Treemap"/></td>
-                            <td><img src="./asset/img/example/treemap1.png" title="" alt="Treemap"/></td>
+                            <td><img alt="Treemap" src="./asset/img/example/treemap.png" title=""/></td>
+                            <td><img alt="Treemap" src="./asset/img/example/treemap1.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -536,8 +536,8 @@
                             <th colspan=2> tree </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/tree1.png" title="" alt="tree"/></td>
-                            <td><img src="./asset/img/example/tree2.png" title="" alt="tree"/></td>
+                            <td><img alt="tree" src="./asset/img/example/tree1.png" title=""/></td>
+                            <td><img alt="tree" src="./asset/img/example/tree2.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -547,7 +547,7 @@
                             <th colspan=1> Venn </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/venn.png" title="" alt="Venn"/></td>
+                            <td><img alt="Venn" src="./asset/img/example/venn.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -557,7 +557,7 @@
                             <th colspan=1> Venn </th>
                         </tr>
                         <tr>
-                            <td><img src="./asset/img/example/wordCloud.png" title="" alt="Venn"/></td>
+                            <td><img alt="Venn" src="./asset/img/example/wordCloud.png" title=""/></td>
                         </tr>
                     </table>
 
@@ -679,7 +679,7 @@ require.config({
                         <li>Configure a ECharts path for the module loader, and link to echarts.js from the current page, see above.</li>
                         <li>Dynamically load ECharts and use callback function to initialize it. (PS: if you want to use ECharts on a page where you've already loaded it, just require('echarts').init(dom).) </li>
                     </ol>
-                    <p>see <a href="./start.html" target="_blank" style="margin-right: 50px;">Getting started »</a></p>
+                    <p>see <a href="./start.html" style="margin-right: 50px;" target="_blank">Getting started »</a></p>
 
                     <h3>plain single file import <a name="Import-ECharts3"> </a></h3>
                     <P>The 1.3.5 release added support for plain import. If your project is not based on modularity, or it’s based on CMD specification (such as using sea.js), then it may not be appropriate for you to include the modular AMD-based ECharts. Therefore it is recommended that you use script plain import. Forget about require, you can directly use two global namespaces - ECharts, ZRender - after script plain import. Reference is made to <a href="example/www2/index.html" target="_blank">ECharts plain import</a>. Note that excanvas judges Canvas support by inserting the body tag into Canvas node, so if you put the script tag of ECharts into the head tag, IE8- browsers would give an error; the solution is to move the script tag into (behind) the body tag.</p>
@@ -705,7 +705,7 @@ require.config({
                         <li>dist/echarts-all.js : a compressed library of all the chart types, including World Map, China Map and Map of China Provinces &amp; Cities.</li>
                         <li>source/echarts-all.js : an uncompressed library of all the chart types, including World Map, China Map and Map of China Provinces &amp; Cities. Available for debugging purposes.</li>
                     </ul>
-                    <p>see <a href="./start.html" target="_blank" style="margin-right: 50px;">Getting started »</a></p>
+                    <p>see <a href="./start.html" style="margin-right: 50px;" target="_blank">Getting started »</a></p>
 
                     <h3>Custom Build ECharts Single File <a name="Custom-Build-Echarts-Single-File"></a></h3>
                     <p>More detail about echarts-optimizer can be found at <a href="https://github.com/ecomfe/echarts-optimizer/blob/master/README.md" target="_blank">README.md</a></p>
@@ -1264,7 +1264,7 @@ require(['echarts'], function (ec){
                             <td> timeline list, also the timeline label content. </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/timeline.png" title="" alt="timeline"/></P>
+                    <p><img alt="timeline" src="./asset/img/doc/timeline.png" title=""/></P>
 
 
                     <h4>title<a name="Title"> </a></h4>
@@ -1380,7 +1380,7 @@ require(['echarts'], function (ec){
                         </tr>
 
                     </table>
-                    <p><img src="./asset/img/doc/title.png" title="" alt="title"/></P>
+                    <p><img alt="title" src="./asset/img/doc/title.png" title=""/></P>
 
 
                     <h4>toolbox<a name="Toolbox"> </a></h4>
@@ -1542,7 +1542,7 @@ require(['echarts'], function (ec){
 }
                               </pre></td>
                             <td> Currently toolbox supports all the features listed below. For custom features, <a href="example/toolbox.html#-en" target="_blank"> try this »</a>
-                            <p><img src="./asset/img/doc/toolbox.png" title="" alt="toolbox"/></P>
+                            <p><img alt="toolbox" src="./asset/img/doc/toolbox.png" title=""/></P>
                             <ul>
                                 <li>
                                     mark: markLine icons. In the picture above, the first, second, and third icons from the left respectively represent markLine switch, undo markLine, and clear markLine. You can set more properties.
@@ -1774,8 +1774,8 @@ require(['echarts'], function (ec){
                             <th> axis trigger </th>
                         </tr>
                         <tr>
-                            <td style="text-align:center"><img src="./asset/img/doc/tooltip1.jpg" title="" alt="item trigger"/></td>
-                            <td style="text-align:center"><img src="./asset/img/doc/tooltip2.jpg" title="" alt="axis trigger"/></td>
+                            <td style="text-align:center"><img alt="item trigger" src="./asset/img/doc/tooltip1.jpg" title=""/></td>
+                            <td style="text-align:center"><img alt="axis trigger" src="./asset/img/doc/tooltip2.jpg" title=""/></td>
                         </tr>
                     </table>
 
@@ -1883,7 +1883,7 @@ require(['echarts'], function (ec){
                             </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/legend.png" title="" alt="legend"/></P>
+                    <p><img alt="legend" src="./asset/img/doc/legend.png" title=""/></P>
 
                     <h4>dataRange<a name="DataRange"> </a></h4>
                     <P> dataRange, at most one dataRange control is allowed in one chart. <a href="example/dataRange.html#-en" target="_blank">Try this »</a></P>
@@ -2044,7 +2044,7 @@ require(['echarts'], function (ec){
                             <td>  We only set the default color of dataRange text, (see<a href="#TextStyle" title="">textStyle</a>). </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataRange.png" title="" alt="dataRange"/></P>
+                    <p><img alt="dataRange" src="./asset/img/doc/dataRange.png" title=""/></P>
 
                     <h4>dataZoom<a name="DataZoom"> </a></h4>
                     <P> dataZoom. Synchronized with toolbox.feature.dataZoom. Applicable to Cartesian chart only. <a href="example/dataZoom.html#-en" target="_blank">Try this »</a></P>
@@ -2155,7 +2155,7 @@ require(['echarts'], function (ec){
                             <td> DataZoom lock. Defaults to false. When set to true, the selected area cannot be zoomed,  i.e. (end - start) value remains unchanged; only data roaming is applicable. </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataZoom.png" title="" alt="dataZoom"/></P>
+                    <p><img alt="dataZoom" src="./asset/img/doc/dataZoom.png" title=""/></P>
 
                     <h4>roamController<a name="RoamController"> </a></h4>
                     <P> Zoom and roam controller for the map. <a href="example/map1.html#-en" target="_blank">try this »</a></P>
@@ -2241,7 +2241,7 @@ require(['echarts'], function (ec){
                             <td> Required. Specifies the mapType which should be under control, as: { china: true }<br/>You can specify every single mapType when multiple map in a chart at the same time, such as: { china: false, world: true} </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/roamController.png" title="" alt="roamController"/></P>
+                    <p><img alt="roamController" src="./asset/img/doc/roamController.png" title=""/></P>
 
                     <h4>grid<a name="Grid"> </a></h4>
                     <P> A network of regularly spaced lines on a Cartesian coordinate system. </P>
@@ -2309,7 +2309,7 @@ require(['echarts'], function (ec){
                             <td> Color of the border. </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/grid.jpg" title="" alt="grid"/></P>
+                    <p><img alt="grid" src="./asset/img/doc/grid.jpg" title=""/></P>
 
                     <h4>xAxis<a name="Xaxis"> </a></h4>
                     <P>The horizontal axis array in Cartesian coordinates. Each item in the array stands for a horizontal axis, and the array can be omitted if there is only one horizontal axis. In one chart, at most two horizontal axes are allowed. If there is only one x-axis, you can place it either at the bottom (by default) or at the top of the <a href="#Grid" title="">grid</a>. If there are two x-axes, they shall be placed in opposition to each other. By default, the first x-axis is placed at the bottom of the grid, and the second at the top. </p>
@@ -2476,8 +2476,8 @@ require(['echarts'], function (ec){
                         </tr>
                         <tr>
                             <th> Effects </th>
-                            <td><img src="./asset/img/doc/axisBoundaryGap1.jpg" title="" alt="axisBoundaryGap1"/></td>
-                            <td><img src="./asset/img/doc/axisBoundaryGap.png" title="" alt="axisBoundaryGap"/></td>
+                            <td><img alt="axisBoundaryGap1" src="./asset/img/doc/axisBoundaryGap1.jpg" title=""/></td>
+                            <td><img alt="axisBoundaryGap" src="./asset/img/doc/axisBoundaryGap.png" title=""/></td>
                         </tr>
                     </table>
                     <P> scale strategy</P>
@@ -2489,12 +2489,12 @@ require(['echarts'], function (ec){
                         </tr>
                         <tr>
                             <th> Effects </th>
-                            <td><img src="./asset/img/doc/axisScale1.png" title="" alt="axisScale1"/></td>
-                            <td><img src="./asset/img/doc/axisScale2.png" title="" alt="axisScale2"/></td>
+                            <td><img alt="axisScale1" src="./asset/img/doc/axisScale1.png" title=""/></td>
+                            <td><img alt="axisScale2" src="./asset/img/doc/axisScale2.png" title=""/></td>
                         </tr>
                     </table>
                     <P> description of axis properties</P>
-                    <p><img src="./asset/img/doc/axisDetail.png" title="" alt="axisDetail"/></P>
+                    <p><img alt="axisDetail" src="./asset/img/doc/axisDetail.png" title=""/></P>
 
                     <h5>axis.axisLine<a name="AxisAxisline"> </a></h5>
                     <P> axis line. Defaults to show. Default styles are listed below. </P>
@@ -5211,7 +5211,7 @@ geoCoord : {
                         <li>through option.series.*, set special configuration for some specific series. It has a higher priority than the configuration  with the same name in option.*;</li>
                         <li>through option.series.data.*, set special configuration for some specific data. It has the highest priority of all. </li>
                     </ul>
-                    <p><img src="./asset/img/doc/multiControl.jpg" title="" alt="multi-level control"/></P>
+                    <p><img alt="multi-level control" src="./asset/img/doc/multiControl.jpg" title=""/></P>
 
                     <h3>Appendix: Map Extension<a name="Appendix-Map-Extension"> </a></h3>
                     <p>BMap which is base on map.baidu.com, see
@@ -5418,7 +5418,7 @@ option.series = [
                             <td> relevant to color of the dataRange control, gets the color corresponding to the name passed in. <br/>Parameters: <b>{number}</b> value <br/> Return value: <b>{color}</b> matched color </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataRange.png" title="" alt="dataRange"/></P>
+                    <p><img alt="dataRange" src="./asset/img/doc/dataRange.png" title=""/></P>
 
                     <h4>dataZoom<a name="DataZoomInterface"> </a></h4>
                     <P>dataZoom interface. Synchronized with toolbox.feature.dataZoom. Applicable to Cartesian chart only. Methods and properties available are: </P>
@@ -5439,7 +5439,7 @@ option.series = [
                             <td> dataZoom. <br/>Parameters: <b>{Object}</b> {start : value, end : value, start2 : value, end2 : value} (zoom parameters). <br/> Return value: null. Role: change the data display area according to the value passed in. The valid range is [0,100]. In most cases, you just need to specify the start and end of dataZoom in the primary region. In scatter, you can use dataZoom in two dimensions simultaneously, via additionally specifying start2, end2. </td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/dataZoom.png" title="" alt="数据区域缩放"/></P>
+                    <p><img alt="数据区域缩放" src="./asset/img/doc/dataZoom.png" title=""/></P>
 
                     <h4>grid<a name="GridInterface"> </a></h4>
                     <P>grid. Methods and properties available are:</P>
@@ -5490,7 +5490,7 @@ option.series = [
                             <td> the area data of the grid. Equal to all the return values of getX, getY, getWidth, getHeight. <br/>Parameters: null. <br/> Return value: <b>{Object}</b> {x : value, y : value, width : value, height : value}</td>
                         </tr>
                     </table>
-                    <p><img src="./asset/img/doc/grid.jpg" title="" alt="grid"/></P>
+                    <p><img alt="grid" src="./asset/img/doc/grid.jpg" title=""/></P>
 
                     <h4>xAxis/yAxis<a name="AxisInterface"> </a></h4>
                     <P>horizontal/vertical axis. Methods and properties available are: </P>
@@ -5698,7 +5698,7 @@ myChart.dispose();
     <footer id="footer"></footer>
 
     <script src="./asset/js/jquery.min.js"></script>
-    <script type="text/javascript" src="./asset/js/echartsHome.js"></script>
+    <script src="./asset/js/echartsHome.js" type="text/javascript"></script>
     <script src="./asset/js/bootstrap.min.js"></script>
     <script src="asset/js/echartsConfig.js"></script>
     <script src="asset/js/echartsDoc.js"></script>
