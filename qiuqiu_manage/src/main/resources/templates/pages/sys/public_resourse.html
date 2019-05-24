@@ -1,0 +1,239 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">个人空间</h3>
+
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 450px;">
+						<input type="text" name="table_search" id="searchNameId"
+							class="form-control pull-right" placeholder="用户名">
+
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default btn-search">
+								<i class="fa fa-search"></i>
+							</button>
+							<button type="button" class="btn btn-default btn-delete">删除文件</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th><input type="checkbox" id="checkAll">全选</th>
+							<th>序号</th>
+							<th>用户名</th>
+							<th>学号</th>
+							<th>文件名</th>
+							<th>文件大小</th>
+							<th>标签</th>
+							<th>上传时间</th>
+							<th>下载</th>
+
+						</tr>
+					</thead>
+					<tbody id="tbodyId">
+						<tr>
+							<td colspan="7"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="pageId">
+				<tr>
+
+				</tr>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+<script type="text/javascript">
+
+//$(function(){ $(".btn-add").click(function(){$("#mainContentId").load(url);});
+
+
+
+
+ $(function(){
+	//异步加载page页面信息
+	$("#pageId").load("doPageUI.do",function(){
+		
+	//异步加载用户列表信息,就是呈现从数据库获取的
+	doGetObjects();
+	});
+	
+	
+	//查询按钮事件注册
+	$(".input-group-btn")
+	.on("click",".btn-search",doQueryObjects)//点击查询按钮时执行分页查询操作
+	
+	
+	//全选按钮时间注册
+	$("#checkAll").click(doSelectAllUser);
+	
+	//tbody中checkbox对象事件注册,去影响"全选"按钮.
+	$("#tbodyId").on("click",".cBox",doChangeTbodyUser);
+});
+
+
+
+
+
+
+/*实全选按钮时间注册*/
+function doSelectAllUser(){
+	   //1.获取当前点击对象的checked属性的值
+	   var flag=$(this).prop("templates.pages.sys.rankingList.checked");//true or false
+	   //2.将tbody中所有checkbox元素的值都修改为flag对应的值。
+	   //第一种方案
+	   /* $("#tbodyId input[name='cItem']")
+	   .each(function(){
+		   $(this).prop("checked",flag);
+	   }); */
+	   //第二种方案迭代
+	   $("#tbodyId input[type='checkbox']")
+	   .each(function(){
+		$(this).prop("templates.pages.sys.rankingList.checked",flag);
+	   })
+}
+
+//方法:tbody中checkbox对象事件注册,去影响"全选"按钮.让下面的影响"全选"按钮
+function doChangeTbodyUser(){
+	//1.获取所有tbody中checkbox状态相与的结果
+	var flag=true;
+	$("#tbodyId input[type='checkbox']")
+	.each(function(){
+		flag=flag&&$(this).prop("templates.pages.sys.rankingList.checked");
+	});
+	//2.设置thead中checkbox状态值为flag;
+	$("#checkAll").prop("templates.pages.sys.rankingList.checked",flag);
+	
+}
+
+
+
+
+//点击查询按钮时执行分页查询操作
+function doQueryObjects(){
+	   //debugger
+	   console.log("doQueryObjects()");
+	   //1.设置当前页码值
+	   $("#pageId").data("pageCurrent",1);
+	   //2.执行查询操作
+	   doGetObjects();
+}
+
+
+
+
+
+//方法F1
+function doGetCheckedIds(){
+	   //1.定义一个数组
+	   var array=[];
+	   //1.获取tbody中类型为checkbox的input元素
+	   $("#tbodyId input[type='checkbox']")
+	   //2.迭代这些checkbox元素
+	   .each(function(){
+		   //3.判定此元素是否被选中
+		   //prop函数是用于获取元素中某个属性的值
+		   if($(this).prop("templates.pages.sys.rankingList.checked")){
+			  //4.将选中的值存储到数组
+			  array.push($(this).val());
+		   }
+	   });
+	   //5.返回数组
+	   return array;
+}
+
+
+
+function doGetObjects(){
+	//更新"全选"的删除,放弃"全选"的选择状态
+	$("#checkAll").prop("templates.pages.sys.rankingList.checked",false);
+	//1.访问的url
+	//2.params 
+	var url="resourse/doFindPageObjects.do";//向服务端发送请求
+	var pageCurrent=$("#pageId").data("pageCurrent");
+	if(!pageCurrent) pageCurrent=1;
+	var params={"pageCurrent":pageCurrent};
+	
+	//获取页面名字搜索框的值
+	 var username=$("#searchNameId").val();
+	   if(username){
+		   params.username=username;
+	   }
+	
+	//3.发请求,getJSON底层向服务器端发送异步,
+	//服务端结果响应到客户端以后会调用function
+	$.getJSON(url,params,function(result){//jsonresult
+		doHandleResponseResult(result);//方法A:处理从服务端传来的字符串
+		
+	});
+}
+
+
+//处理服务端返回的结果
+function doHandleResponseResult(result){
+	   //console.log(result);
+	   if(result.state==1){//呈现数据(重点)
+		 //将日志记录呈现在本页面的tbody位置
+		 doSetTableBodyRows(result.data.records);
+		 //将分页信息呈现在分页div中
+		 doSetPagination(result.data);
+	   }else{
+		  alert(result.message);
+	   }
+}
+//将日志记录呈现在tbody中
+function doSetTableBodyRows(records){
+	   //1.获取tbody对象,并清空
+	   var tBody=$("#tbodyId");
+	   tBody.empty();
+	   //2.将记录records进行呈现
+	   //2.1迭代记录集
+	   for(var i=0;i<records.length;i++){
+		   //2.2 创建tr对象
+		   var tr=$("<tr></tr>");
+		   //2.3 创建多个td对象
+		   var tds=doCreateTds(records[i]);
+		   //2.4 将td对象追加到tr中
+		   tr.append(tds);
+		   //2.5 将tr追加到tbody中
+		   tBody.append(tr);
+	   }
+}
+function doCreateTds(data){
+	   var tds="<td><input type='checkbox' class='cBox' name='cItem' value='"+data.id+"'></td>"+
+		   	 "<td>"+data.id+"</td>"+
+		     "<td>"+data.name+"</td>"+
+		     "<td>"+data.studentId+"</td>"+
+		     "<td>"+data.fileName+"</td>"+
+		     "<td>"+data.size+"</td>"+
+		     "<td>"+data.tag+"</td>"+
+		     "<td>"+data.createTime+"</td>";	   
+         return tds;
+}
+
+
+
+
+</script>
+
+
+
+

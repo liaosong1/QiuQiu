@@ -29,19 +29,19 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>JT-</b>SYS</a>
+    <a href="#"><b>教育管理-</b>系统</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">登陆--开启您的旅程</p>
 
     <form method="post">
       <div class="form-group has-feedback">
-        <input type="text" id="usernameId" name="username" class="form-control" placeholder="username">
+        <input type="text" id="usernameId" name="username" class="form-control" placeholder="用户名">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" id="passwordId" name="password" class="form-control" placeholder="Password">
+        <input type="password" id="passwordId" name="password" class="form-control" placeholder="密码">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
      
@@ -50,13 +50,13 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input type="checkbox" id="rememberId"> 记住我
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="button" class="btn btn-primary btn-block btn-flat btn-login">Sign In</button>
+          <button type="button" class="btn btn-primary btn-block btn-flat btn-login">登陆</button>
         </div>
         <!-- /.col -->
       </div>
@@ -85,10 +85,11 @@
   function doLogin(){
 	  var params={
 		 username:$("#usernameId").val(),
-		 password:$("#passwordId").val()
+		 password:$("#passwordId").val(),
+		 isRememberMe:$("#rememberId").prop("templates.pages.sys.rankingList.checked"),//获取属性值
 	  }
 	  var url="user/doLogin.do";
-	  console.log("params",params);
+	  console.log(params);
 	  $.post(url,params,function(result){
 		  if(result.state==1){
 			//跳转到indexUI对应的页面

@@ -5,16 +5,17 @@
 				<h3 class="box-title">用户管理</h3>
 
 				<div class="box-tools">
-					<div class="input-group input-group-sm" style="width: 350px;">
+					<div class="input-group input-group-sm" style="width: 450px;">
 						<input type="text" name="table_search" id="searchNameId"
 							class="form-control pull-right" placeholder="用户名">
 
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default btn-search">
-                                <i class="fa fa-search"></i>
+								<i class="fa fa-search"></i>
 							</button>
-							<button type="button" class="btn btn-default btn-add">添加</button>
-							<button type="button" class="btn btn-default btn-update">修改</button>
+							<button type="button" class="btn btn-default btn-add">添加用户</button>
+							<button type="button" class="btn btn-default btn-update">修改用户</button>
+							<button type="button" class="btn btn-default btn-delete">删除用户</button>
 						</div>
 					</div>
 				</div>
@@ -24,93 +25,93 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th><input type="checkbox" id="checkAll">全选</th>
 							<th>用户名</th>
-							<th>部门</th>
+							<th>性别</th>
+							<th>班级</th>
 							<th>邮箱</th>
 							<th>手机号</th>
 							<th>状态</th>
+							<th>综合成绩</th>
 							<th>创建时间</th>
 							<th>修改时间</th>
 							<th>操作</th>
 						</tr>
 					</thead>
-					<tbody id="tbodyId"></tbody>
+					<tbody id="tbodyId"">
+						<tr>
+							<td colspan="7">数据加载中...</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
-			<div id="pageId" class="box-footer clearfix">
+			<div id="pageId">
+				<tr>
+
+				</tr>
 			</div>
 			<!-- /.box-body -->
 		</div>
 		<!-- /.box -->
 	</div>
 </div>
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
 <script type="text/javascript">
-   $(document).ready(function(){
-	   $("#pageId").load("doPageUI.do",function(){
-		   doGetObjects();
-	   });
-	   $(".input-group-btn")
-	   .on("click",".btn-search",doQueryObjects)
-	   .on("click",".btn-add,.btn-update",doLoadEditUI);
-	   $("tbody").on("click",".btn-valid",doValidById);
-   });
-   
-   function doLoadEditUI(){
-	   //1.判定点击的对象
-	   var title;
-	   if($(this).hasClass("btn-add")){
-		   title="添加用户";
-		   doLoadPage(title);
-	   }else if($(this).hasClass("btn-update")){
-		   title="修改用户";
-		   var id=doGetCheckedId();
-		   console.log("id="+id)
-		   if(!id){
-			  alert("请先选择");
-			  return;
-		   }
-		   //基于id进行查询并加载编辑页面
-		   doFindObjectById(id,title);
-	   }
-   }
-   function doFindObjectById(id,title){
-	   //1.params
-	   var params={"id":id};
-	   //2.url
-	   var url="user/doFindObjectById.do";
-	   //3.ajax request
-	   $.getJSON(url,params,function(result){//JsonResult
-		   if(result.state==1){
-			  $("#mainContentId").data("rowData",result.data); 
-	          doLoadPage(title);
-		   }else{
-			  alert(result.message);
-		   }
-	   });
-   }
-   
-   function doGetCheckedId(){
-	 return $("tbody input[name='radioId']:checked").val();
-   }
-   function doLoadPage(title){
-	   var url="user/doUserEditUI.do"
-	   $("#mainContentId").load(url,function(){
-		   $(".box-title").html(title);
-	   }) 
-   }
-   //禁用和启用操作
-   function doValidById(){
-	   //params
-	   var rowData=$(this).parents("tr").data("rowData");
-	   var id=rowData.id;
-	   var newValid=rowData.valid?0:1;
-	   var params={"id":rowData.id,"valid":newValid};
-	   //url
+	
+//跳转到添加页面
+	$(function() {
+		$(".btn-add").click(function() {
+			$("firstPage.html,#mainContentId").load("user/doUserEditUI.do");
+		});
+	})
+
+	$(function() {
+		//异步加载page页面信息
+		$("#pageId").load("doPageUI.do", function() {
+
+			//异步加载用户列表信息,就是呈现从数据库获取的
+			doGetObjects();
+		});
+
+		//查询删除按钮事件注册
+		$(".input-group-btn")
+		.on("click", ".btn-search", doQueryObjects)//点击查询按钮时执行分页查询操作
+		.on("click", ".btn-delete", doDeleteUser);//删除用户
+		$("tbody").on("click", ".btn-valid", doValidById);//on()函数,可以为某个对象注册一个click事件
+
+		//全选按钮时间注册
+		$("#checkAll").click(doSelectAllUser);
+
+		//tbody中checkbox对象事件注册,去影响"全选"按钮.
+		$("#tbodyId").on("click", ".cBox", doChangeTbodyUser);
+	});
+
+	//实现禁用启用按钮
+	function doValidById() {
+	//参数 
+	//this表示去选择$("tbody"),parent表示去选父级,然后取 行的记录数,
+	//(rowdata只是由用户定义的临时名称。并不是说一定要用rowData这个字符串做为变量。)
+
+	
+	var rowData =$(this).parents("tr").data("rowData"); //拓展别的方式,不用rowData
+	//var rowData =$(this).parents("tr").children("[name='cItem']");  //不用rowData
+
+	  var id=rowData.id;
+	  var newValid=rowData.valid?0:1;
+	  var params={"id":rowData.id,"valid":newValid};
+	  //url
 	   var url="user/doValidById.do";
 	   //ajax request
        var btn=$(this);//获取点击的button对象
-	   $.post(url,params,function(result){
+       $.post(url,params,function(result){
     	   if(result.state==1){
     		   alert(result.message);
     		   //doGetObjects();//重新查询刷新
@@ -120,71 +121,182 @@
     		   alert(result.message);
     	   }
        })    
-   }    
-   function doEditRow(obj,valid){
-	   //1.修改按钮上的内容
-	   $(obj).html(valid?"启用":"禁用");
-	   //2.修改tr中第5个td中的内容(查询API文档)
-	   var tr=$(obj).parents("tr");
-	   tr.find("td:eq(5)").text(valid?"禁用":"启用");
-	   //3.获取当前行tr对象，然后重新绑定新的值
-	   var rowData=tr.data("rowData")
-	   rowData.valid=valid?0:1;
-	   tr.data("rowData",rowData);
-   }
-   //处理查询按钮事件
-   function doQueryObjects(){
-	   $("#pageId").data("pageCurrent",1);
-	   doGetObjects();
-   }
-   //页面加载完成异步加载当前页数据
-   function doGetObjects(){
-	   var url="user/doFindPageObjects.do";
-	   var pageCurrent=$("#pageId").data("pageCurrent");
-	   if(!pageCurrent)pageCurrent=1;
-	   var params={"pageCurrent":pageCurrent}
-	   params.username=$("#searchNameId").val().trim();
-	   console.log(params);
-	   $.getJSON(url,params,function(result){
-		   console.log(result);
-		   doHandleResponseResult(result);
-	   });
-   }
-   function doHandleResponseResult(result){
-	   if(result.state==1){
-		  doSetTableBodyRows(result.data.records);
-		  doSetPagination(result.data);
-		}else{
-		  alert(result.message);
+	}
+
+	 function doEditRow(obj,valid){
+		   //1.修改按钮上的内容
+		   $(obj).html(valid?"启用":"禁用");
+		   //2.修改tr中第5个td中的内容(查询API文档)
+		   var tr=$(obj).parents("tr");
+		   tr.find("td:eq(5)").text(valid?"禁用":"启用");
+		   //3.获取当前行tr对象，然后重新绑定新的值
+		   var rowData=tr.data("rowData")
+		   rowData.valid=valid?0:1;
+		   tr.data("rowData",rowData);
 	   }
-   }
-   //通过服务端返回的数据初始化页面
-   function doSetTableBodyRows(data){
-	  //1.获取tbody对象，并清空内容
-	  var tBody=$("#tbodyId");
-	  tBody.empty();
-	  //2.迭代data内容将数据追加到tbody中
-	  for(var i in data){
-		  var tr=$("<tr></tr>");
-		  tr.data("rowData",data[i]);
-		  var tds=doCreateTds(data[i]);
-		  tr.append(tds);
-		  tBody.append(tr);
-	  }
-   }
-   function doCreateTds(row){
-	   console.log(row);
-	   var tds="<td><input type='radio' name='radioId' value='"+row.id+"' ></td>"+
-	     "<td>"+row.username+"</td>"+
-	     "<td>"+(row.sysDept?row.sysDept.name:'未分配')+"</td>"+
-	     "<td>"+row.email+"</td>"+
-	     "<td>"+row.mobile+"</td>"+
-	     "<td>"+(row.valid?"启用":"禁用")+"</td>"+
-	     "<td>"+new Date(row.createdTime).toLocaleString()+"</td>"+
-	     "<td>"+new Date(row.modifiedTime).toLocaleString()+"</td>"+
-	     "<td><button type='button' class='btn btn-default btn-valid'>"+(row.valid?"禁用":"启用")+"</button></td>"; 
-       return tds;
-   }
+	
+	
+	
+	
+	/*实全选按钮时间注册*/
+	function doSelectAllUser() {
+		//1.获取当前点击对象的checked属性的值
+		var flag = $(this).prop("templates.pages.sys.rankingList.checked");//true or false
+		//2.将tbody中所有checkbox元素的值都修改为flag对应的值。
+		//第一种方案
+		/* $("#tbodyId input[name='cItem']")
+		.each(function(){
+		   $(this).prop("checked",flag);
+		}); */
+		//第二种方案迭代
+		$("#tbodyId input[type='checkbox']").each(function() {
+			$(this).prop("templates.pages.sys.rankingList.checked", flag);
+		})
+	}
+
+	//方法:tbody中checkbox对象事件注册,去影响"全选"按钮.让下面的影响"全选"按钮
+	function doChangeTbodyUser() {
+		//1.获取所有tbody中checkbox状态相与的结果
+		var flag = true;
+		$("#tbodyId input[type='checkbox']").each(function() {
+			flag = flag && $(this).prop("templates.pages.sys.rankingList.checked");
+		});
+		//2.设置thead中checkbox状态值为flag;
+		$("#checkAll").prop("templates.pages.sys.rankingList.checked", flag);
+
+	}
+
+	//点击查询按钮时执行分页查询操作
+	function doQueryObjects() {
+		//1.设置当前页码值
+		$("#pageId").data("pageCurrent", 1);
+		//2.执行查询操作
+		doGetObjects();
+	}
+
+	//删除用户
+	function doDeleteUser() {
+		//1.获取选择的记录id,比如多个则放到数组中
+		var idArray = doGetCheckedIds();//方法F1
+		if (idArray.length == 0) {
+			alert("请至少选择一个用户");
+			return;
+		}
+		//2.确认是否删除
+		if (!confirm("确认删除吗"))
+			return;
+		//3.异步执行删除操作
+		//3.1 params
+		var params = {
+			"ids" : idArray.toString()
+		}//默认转成1,2,3结构的字符串
+		//3.2 url
+		var url = "user/doDeleteUser.do";
+		//3.3 request (发送post请求),向服务器发送请求用post,获取用get
+		$.post(url, params, function(result) {
+			if (result.state == 1) {
+				alert(result.message);
+				doGetObjects();//刷新
+			} else {
+				alert(result.message);
+			}
+		})
+	}
+
+	//方法F1
+	function doGetCheckedIds() {
+		//1.定义一个数组
+		var array = [];
+		//1.获取tbody中类型为checkbox的input元素
+		$("#tbodyId input[type='checkbox']")
+		//2.迭代这些checkbox元素
+		.each(function() {
+			//3.判定此元素是否被选中
+			//prop函数是用于获取元素中某个属性的值
+			if ($(this).prop("templates.pages.sys.rankingList.checked")) {
+				//4.将选中的值存储到数组
+				array.push($(this).val());
+			}
+		});
+		//5.返回数组
+		return array;
+	}
+
+	function doGetObjects() {
+		//更新"全选"的删除,放弃"全选"的选择状态
+		$("#checkAll").prop("templates.pages.sys.rankingList.checked", false);
+
+		//1.访问的url
+		var url = "user/doFindPageObjects.do";//向服务端发送请求
+		//2.params 
+		var pageCurrent = $("#pageId").data("pageCurrent");
+		if (!pageCurrent)
+			pageCurrent = 1;
+		var params = {
+			"pageCurrent" : pageCurrent
+		};
+
+		//获取页面名字搜索框的值
+		var username = $("#searchNameId").val().trim();
+		if (username) {
+			params.username = username;
+		}
+
+		//3.发请求,getJSON底层向服务器端发送异步,
+		//服务端结果响应到客户端以后会调用function
+		$.getJSON(url, params, function(result) {//jsonresult
+			doHandleResponseResult(result);//方法A:处理从服务端传来的字符串
+
+		});
+	}
+	//方法A
+	function doHandleResponseResult(result) {
+		if (result.state == 1) {
+			//1.呈现数据
+			//1.1 将日志记录呈现在本页面的tbody位置
+			doSetTableBodyRows(result.data.records);//方法B
+			//2.将分页信息呈现在分页div中,就是呈现嵌套页面上的页面数字信息
+			doSetPagination(result.data);
+		} else {
+			alert(result.message);
+		}
+	}
+
+	//方法B,将日志记录呈现在tbody中
+	function doSetTableBodyRows(records) {
+		//1.获取tbody对象,并清空
+		var tBody = $("#tbodyId");
+		tBody.empty();
+		//2.将记录records进行呈现
+		//2.1迭代记录集
+		for (var i = 0; i < records.length; i++) {
+			//2.2 创建tr对象
+			var tr = $("<tr></tr>");
+			tr.data("rowData",records[i]);//为每一行命名
+			//2.3 创建多个td对象
+			var tds = doCreateTds(records[i]);//方法C
+			//2.4 将td对象追加到tr中
+			tr.append(tds);
+			//2.5 将tr追加到tbody中
+			tBody.append(tr);
+		}
+	}
+
+	//方法C
+	function doCreateTds(data) {
+		var tds = "<td><input type='checkbox' class='cBox' name='cItem' value='"+data.id+"'></td>"
+				+ "<td>" + data.username + "</td>"
+				+ "<td>" + data.gender + "</td>"
+				+ "<td>"+ data.className + "</td>"
+				+ "<td>" + data.email + "</td>"
+				+ "<td>" + data.mobile + "</td>"
+				+ "<td>" + (data.valid ? "启用" : "禁用") + "</td>"
+				+ "<td>" + data.score + "</td>"
+				+ "<td>" + new Date(data.createdTime).toLocaleString()+ "</td>"
+				+ "<td>" + new Date(data.modifiedTime).toLocaleString() + "</td>"
+				+ "<td><button type='button' class='btn btn-default btn-valid'>" + (data.valid ? "禁用" : "启用") + "</button></td>";
+		return tds;
+	}
 </script>
 
 

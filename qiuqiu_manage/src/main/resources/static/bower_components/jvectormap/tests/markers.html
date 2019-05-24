@@ -246,18 +246,18 @@
       $('.list-markers :checkbox').change(function(){
         var index = $(this).closest('li').attr('data-marker-index');
 
-        if ($(this).prop('checked')) {
+        if ($(this).prop('templates.pages.sys.rankingList.checked')) {
           map.addMarker( index, markers[index], [values1[index], values2[index], values3[index]] );
         } else {
           map.removeMarkers( [index] );
         }
       });
       $('.button-add-all').click(function(){
-        $('.list-markers :checkbox').prop('checked', true);
+        $('.list-markers :checkbox').prop('templates.pages.sys.rankingList.checked', true);
         map.addMarkers(markers, [values1, values2, values3]);
       });
       $('.button-remove-all').click(function(){
-        $('.list-markers :checkbox').prop('checked', false);
+        $('.list-markers :checkbox').prop('templates.pages.sys.rankingList.checked', false);
         map.removeAllMarkers();
       });
       $('.button-clear-selected-regions').click(function(){

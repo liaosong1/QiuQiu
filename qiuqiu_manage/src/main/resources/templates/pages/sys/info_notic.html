@@ -1,0 +1,201 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h2 class="box-title">通知公告</h2>
+
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 450px;">
+						<input type="text" name="table_search" id="searchNameId"
+							class="form-control pull-right" placeholder="搜索内容">
+
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default btn-search">
+								<i class="fa fa-search"></i>
+							</button>
+							<button type="button" class="btn btn-default btn-add">最新公告</button>
+							<button type="button" class="btn btn-default btn-update">规章制度</button>
+							<button type="button" class="btn btn-default btn-delete">公司简介</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default  btn-shouye"
+								style="width: 200px">首页</button>
+							<button type="button" class="btn btn-default "
+								style="width: 200px">达内新闻</button>
+							<button type="button" class="btn btn-default "
+								style="width: 200px">关于达内</button>
+							<button type="button" class="btn btn-default "
+								style="width: 200px">教育教学</button>
+							<button type="button" class="btn btn-default "
+								style="width: 200px">学术科研</button>
+							<button type="button" class="btn btn-default "
+								style="width: 200px">招生就业</button>
+						</div>
+					</thead>
+					<tbody id="tbodyId">
+
+						<li><a href="pages/mayday.html"> <span>关于五一放假安排</span>
+						</a></li>
+						<li><a href="pages/mayday.html"> <span>培优后期课程调整通知</span>
+						</a></li>
+						<li><a href="pages/mayday.html"> <span>2019年3月最新就业通报</span>
+						</a></li>
+						<li><a href="pages/mayday.html"> <span>关于天府中心人事调整通知</span>
+						</a></li>
+						<li><a href="pages/mayday.html"> <span>有口碑找顺哥</span>
+						</a></li>
+						<li><a href="pages/mayday.html"> <span>有口碑找瑶姐</span>
+						</a></li>
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".btn-add").click(function() {
+			$("firstPage.html,#mainContentId").load("user/doUserEditUI.do");
+		});
+	})
+	$(function() {
+		//异步加载page页面信息
+		$("#pageId").load("doPageUI.do", function() {
+
+			//异步加载用户列表信息,就是呈现从数据库获取的
+			doGetObjects();
+		});
+
+		//查询按钮事件注册
+		$(".input-group-btn").on("click", ".btn-search", doQueryObjects)//点击查询按钮时执行分页查询操作
+		.on("click", ".btn-delete", doDeleteUser);//删除用户
+		//全选按钮时间注册
+		$("#checkAll").click(doSelectAllUser);
+
+		//tbody中checkbox对象事件注册,去影响"全选"按钮.
+		$("#tbodyId").on("click", ".cBox", doChangeTbodyUser);
+	});
+	/*实全选按钮时间注册*/
+	function doSelectAllUser() {
+		//1.获取当前点击对象的checked属性的值
+		var flag = $(this).prop("templates.pages.sys.rankingList.checked");//true or false
+		//2.将tbody中所有checkbox元素的值都修改为flag对应的值。
+		//第一种方案
+		/* $("#tbodyId input[name='cItem']")
+		.each(function(){
+		   $(this).prop("checked",flag);
+		}); */
+		//第二种方案迭代
+		$("#tbodyId input[type='checkbox']").each(function() {
+			$(this).prop("templates.pages.sys.rankingList.checked", flag);
+		})
+	}
+
+	//方法:tbody中checkbox对象事件注册,去影响"全选"按钮.让下面的影响"全选"按钮
+	function doChangeTbodyUser() {
+		//1.获取所有tbody中checkbox状态相与的结果
+		var flag = true;
+		$("#tbodyId input[type='checkbox']").each(function() {
+			flag = flag && $(this).prop("templates.pages.sys.rankingList.checked");
+		});
+		//2.设置thead中checkbox状态值为flag;
+		$("#checkAll").prop("templates.pages.sys.rankingList.checked", flag);
+	}
+	//点击查询按钮时执行分页查询操作
+	function doQueryObjects() {
+		//debugger
+		console.log("doQueryObjects()");
+		//1.设置当前页码值
+		$("#pageId").data("pageCurrent", 1);
+		//2.执行查询操作
+		doGetObjects();
+	}
+
+	//删除用户
+	function doDeleteUser() {
+		//1.获取选择的记录id,比如多个则放到数组中
+		var idArray = doGetCheckedIds();//方法F1
+		if (idArray.length == 0) {
+			alert("请至少选择一个用户");
+			return;
+		}
+		//2.确认是否删除
+		if (!confirm("确认删除吗"))
+			return;
+		//3.异步执行删除操作
+		//3.1 params
+		var params = {
+			"ids" : idArray.toString()
+		}//默认转成1,2,3结构的字符串
+		//3.2 url
+		var url = "user/doDeleteUser.do";
+		//3.3 request (发送post请求),向服务器发送请求用post,获取用get
+		$.post(url, params, function(result) {
+			if (result.state == 1) {
+				alert(result.message);
+				doGetObjects();//刷新
+			} else {
+				alert(result.message);
+			}
+		})
+	}
+	//方法F1
+	function doGetCheckedIds() {
+		//1.定义一个数组
+		var array = [];
+		//1.获取tbody中类型为checkbox的input元素
+		$("#tbodyId input[type='checkbox']")
+		//2.迭代这些checkbox元素
+		.each(function() {
+			//3.判定此元素是否被选中
+			//prop函数是用于获取元素中某个属性的值
+			if ($(this).prop("templates.pages.sys.rankingList.checked")) {
+				//4.将选中的值存储到数组
+				array.push($(this).val());
+			}
+		});
+		//5.返回数组
+		return array;
+	}
+	function doGetObjects() {
+		//更新"全选"的删除,放弃"全选"的选择状态
+		$("#checkAll").prop("templates.pages.sys.rankingList.checked", false);
+		//1.访问的url
+		var url = "user/doFindPageObjects.do";//向服务端发送请求
+		//2.params 
+		var pageCurrent = $("#pageId").data("pageCurrent");
+		if (!pageCurrent)
+			pageCurrent = 1;
+		var params = {
+			"pageCurrent" : pageCurrent
+		};
+
+		//获取页面名字搜索框的值
+		var username = $("#searchNameId").val();
+		if (username) {
+			params.username = username;
+		}
+
+		//3.发请求,getJSON底层向服务器端发送异步,
+		//服务端结果响应到客户端以后会调用function
+		$.getJSON(url, params, function(result) {//jsonresult
+			doHandleResponseResult(result);//方法A:处理从服务端传来的字符串
+
+		});
+	}
+</script>

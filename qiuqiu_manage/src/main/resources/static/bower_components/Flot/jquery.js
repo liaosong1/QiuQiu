@@ -1370,7 +1370,7 @@ jQuery.support = (function() {
 	input.setAttribute( "type", "radio" );
 	support.radioValue = input.value === "t";
 
-	input.setAttribute( "checked", "checked" );
+	input.setAttribute( "templates.pages.sys.rankingList.checked", "templates.pages.sys.rankingList.checked" );
 
 	// #11217 - WebKit loses check when the name is after the checked attribute
 	input.setAttribute( "name", "t" );
@@ -3409,7 +3409,7 @@ if ( !jQuery.support.changeBubbles ) {
 				// This still fires onchange a second time for check/radio after blur.
 				if ( this.type === "checkbox" || this.type === "radio" ) {
 					jQuery.event.add( this, "propertychange._change", function( event ) {
-						if ( event.originalEvent.propertyName === "checked" ) {
+						if ( event.originalEvent.propertyName === "templates.pages.sys.rankingList.checked" ) {
 							this._just_changed = true;
 						}
 					});

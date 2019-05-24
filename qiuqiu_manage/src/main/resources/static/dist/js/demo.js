@@ -150,13 +150,13 @@ $(function () {
 
     //  Reset options
     if ($('body').hasClass('fixed')) {
-      $('[data-layout="fixed"]').attr('checked', 'checked')
+      $('[data-layout="fixed"]').attr('templates.pages.sys.rankingList.checked', 'templates.pages.sys.rankingList.checked')
     }
     if ($('body').hasClass('layout-boxed')) {
-      $('[data-layout="layout-boxed"]').attr('checked', 'checked')
+      $('[data-layout="layout-boxed"]').attr('templates.pages.sys.rankingList.checked', 'templates.pages.sys.rankingList.checked')
     }
     if ($('body').hasClass('sidebar-collapse')) {
-      $('[data-layout="sidebar-collapse"]').attr('checked', 'checked')
+      $('[data-layout="sidebar-collapse"]').attr('templates.pages.sys.rankingList.checked', 'templates.pages.sys.rankingList.checked')
     }
 
   }

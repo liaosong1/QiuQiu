@@ -39,7 +39,7 @@
 
   TodoList.prototype.toggle = function (item) {
     item.parents(Selector.li).first().toggleClass(ClassName.done)
-    if (!item.prop('checked')) {
+    if (!item.prop('templates.pages.sys.rankingList.checked')) {
       this.unCheck(item)
       return
     }

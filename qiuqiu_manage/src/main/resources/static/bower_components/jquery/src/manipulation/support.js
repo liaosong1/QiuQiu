@@ -15,7 +15,7 @@ define( [
 	// Support: Windows Web Apps (WWA)
 	// `name` and `type` must use .setAttribute for WWA (#14901)
 	input.setAttribute( "type", "radio" );
-	input.setAttribute( "checked", "checked" );
+	input.setAttribute( "templates.pages.sys.rankingList.checked", "templates.pages.sys.rankingList.checked" );
 	input.setAttribute( "name", "t" );
 
 	div.appendChild( input );

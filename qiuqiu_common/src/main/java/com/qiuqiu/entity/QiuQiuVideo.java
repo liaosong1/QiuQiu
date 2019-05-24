@@ -3,10 +3,10 @@ package com.qiuqiu.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import java.util.Date;
 /**
  * 视频信息表
  */
-import java.util.Date;
 @Data
 @Accessors(chain = true)
 @TableName("qq_videos")

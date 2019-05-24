@@ -14,7 +14,7 @@
     _iCheckHelper = _iCheck + '-helper',
     _checkbox = 'checkbox',
     _radio = 'radio',
-    _checked = 'checked',
+    _checked = 'templates.pages.sys.rankingList.checked',
     _unchecked = 'un' + _checked,
     _disabled = 'disabled',
     _determinate = 'determinate',

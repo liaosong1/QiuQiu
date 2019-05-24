@@ -56,14 +56,14 @@
     if ($parent.length) {
       var $input = this.$element.find('input')
       if ($input.prop('type') == 'radio') {
-        if ($input.prop('checked')) changed = false
+        if ($input.prop('templates.pages.sys.rankingList.checked')) changed = false
         $parent.find('.active').removeClass('active')
         this.$element.addClass('active')
       } else if ($input.prop('type') == 'checkbox') {
-        if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
+        if (($input.prop('templates.pages.sys.rankingList.checked')) !== this.$element.hasClass('active')) changed = false
         this.$element.toggleClass('active')
       }
-      $input.prop('checked', this.$element.hasClass('active'))
+      $input.prop('templates.pages.sys.rankingList.checked', this.$element.hasClass('active'))
       if (changed) $input.trigger('change')
     } else {
       this.$element.attr('aria-pressed', !this.$element.hasClass('active'))

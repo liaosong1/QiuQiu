@@ -1,0 +1,94 @@
+<!-- 主窗体 -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>Java方向</h3>
+
+              <p>103道试题</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a id="java-e" class="small-box-footer">随机选题  <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>C++方向</h3>
+
+              <p>57道试题</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a id="java-e" class="small-box-footer">随机选题  <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>Web方向</h3>
+
+              <p>96道试题</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a id="java-e" class="small-box-footer">随机选题  <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>大数据方向</h3>
+
+              <p>121道试题</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a id="java-e" class="small-box-footer">随机选题 <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+      <div class="row">
+       
+        
+        <!-- right col -->
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+    
+    
+    <!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$("#java-e").click(function(){
+		$("firstPage.html,#mainContentId").load("exam/doWeekExamSheetUI.do");
+		});
+})
+
+
+
+
+</script>

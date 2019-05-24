@@ -1,0 +1,135 @@
+<body>
+    <div class="page-header">
+
+    </div>
+    <div class="page-body md2019030601-xxw">
+       <div class="container">
+        <div class="box">
+            <div class="x-choose-down">
+                <div class="x-ipt-group" id="sel1">
+                    <div class="custom_sel_text text-center">选择课程方向</div>
+                    <ul id="js_selectProfessional" class="custom_sel_list text-center" style="display: none;">
+                        
+                    </ul>
+                    <input type="hidden" class="custom_sel_val" id="x_sel_val" name="x_zhiye_val">
+                </div>
+            </div>
+            <div class="x-choose-down">
+                <div class="x-ipt-group" id="sel2">
+                    <div class="custom_sel_text text-center">选择课程阶段</div>
+                    <ul id="js_selectProfessiona2" class="custom_sel_list text-center" style="display: none;">
+                      
+                    </ul>
+                    <input type="hidden" class="custom_sel_val" id="x_sel_va2" name="x_zhiye_val">
+                </div>
+            </div>
+            <div class="x-choose-down">
+                <div class="x-ipt-group" id="sel3">
+                    <div class="custom_sel_text text-center">选择课程要点</div>
+                    <ul id="js_selectProfessiona3" class="custom_sel_list text-center" style="display: none;">
+                       
+                    </ul>
+                    <input type="hidden" class="custom_sel_val" id="x_sel_va3" name="x_zhiye_val">
+                </div>
+            </div>
+            <button id="submit_btn" class="form-btn form-btn-blue">开始考试</button>
+        </div>
+       </div>
+    </div>
+
+    <script src="../private/tesweb/js/jquery-2.1.1.js"></script>
+    <script src="../private/tesweb/js/app.js"></script>
+    <script src="../private/tesweb/js/path.js"></script>
+    <script src="../private/tesweb/js/colorbox/jquery.colorbox-min.js"></script>
+    <script>
+      /*自定义下拉选*/
+      function cusmot_select_fun(obj, callback) {
+        var cus_sel_box = (typeof(obj) == 'string') ? $('#' + obj) : obj,
+          cus_sel_list = cus_sel_box.find('ul.custom_sel_list'),
+          cus_sel_val = cus_sel_box.find('input.custom_sel_val'),
+          cus_sel_text = cus_sel_box.find('.custom_sel_text');
+        cus_sel_val.val('');
+        cus_sel_list.on('click.cusselect', 'li.option', function() {
+          cus_sel_text.text($(this).text());
+          cus_sel_val.val($(this).attr('ord_id'));
+          if(callback && typeof(callback) == 'function') {
+            callback($(this).attr('ord_id'), cus_sel_box);
+          }
+        });
+        cus_sel_box.on('click', function() {
+          if(cus_sel_list.is(':hidden')) {
+            $(document).one('mousedown.order', function(e) {
+              var sel_cur_box = $(e.target).closest(cus_sel_box);
+              if(sel_cur_box.length > 0) {
+                return;
+              }
+              cus_sel_list.hide();
+            });
+            cus_sel_list.show();
+          } else {
+            $(document).off('mousedown.order');
+            cus_sel_list.hide();
+          }
+        });
+      }
+        $(function(){
+        	 // 一级课程下拉框数据
+            function oneCourseSelect(id, code, callback) {
+                var $obj = $('#'+ id);
+                if($obj.length){
+                    $.post(TES_URL+"/qsexam/oneLevelCourseLabelList", {code: code}, function(res){
+                        var arr = [];
+                        for (var i = 0; i < res.length; i++) {
+                            arr.push('<li class="option" ord_id='+ res[i].courseId +'>'+ res[i].courseName +'</li>');
+                        }
+                        $obj.html(arr.join(''));
+                        callback && callback(res);
+                    });
+                }
+                
+            }
+        	 //二级和三级课程下拉选
+            function twoAndThreeCourseSelect(id, code, callback) {
+                var $obj = $('#'+ id);
+                if($obj.length){
+                    $.post(TES_URL+"/qsexam/CourseLabelListByPid", {courseId: code}, function(res){
+                        var arr = [];
+                        for (var i = 0; i < res.length; i++) {
+                            arr.push('<li class="option" ord_id='+ res[i].courseId +'>'+ res[i].courseName +'</li>');
+                        }
+                        $obj.html(arr.join(''));
+                        callback && callback(res);
+                    });
+                }
+                
+            }
+            oneCourseSelect('js_selectProfessional', '');
+        	$('#js_selectProfessional').on('click','li',function(){
+        		var id_ = $(this).attr('ord_id');
+        		console.log(id_,"11111id")
+        		 twoAndThreeCourseSelect('js_selectProfessiona2', id_);
+        	})
+        	$('#js_selectProfessiona2').on('click','li',function(){
+        		var id_ = $(this).attr('ord_id');
+        		console.log(id_,"222222id")
+        		 twoAndThreeCourseSelect('js_selectProfessiona3', id_);
+        	})
+        	//点击开始考试
+        	$('#submit_btn').click(function(){
+        		var id_ = $('#x_sel_va3').val();
+        		console.log(id_,"333333id")
+        		if(id_==""){
+        			 openWin('请先选择课程');
+        			 fn1 = function () {
+        		          $.colorbox.close()
+        		     }	
+        			 return false;
+        		}
+        		 window.location.href =TES_URL+"/qsexam/QSRandomPaperExam?courseId="+id_;
+        	})
+          cusmot_select_fun('sel1');
+          cusmot_select_fun('sel2');
+          cusmot_select_fun('sel3');
+        });
+    </script>
+</body>

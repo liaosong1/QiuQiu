@@ -6,36 +6,76 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 @Controller
 public class PageController {
-    //Spring MVC中后端控制器通常会称之为handler
-    //方法调用过程?
-    //1.请求的url会交给DispatcherServlet对象
-    //2.DispatcherServlet对象基于请求url从HandlerMapping中获取HandlerMethod对象
-    //3.DispatcherServlet对象会基于反射技术调用此controller中的方法
+
+    //跳转主页
     @RequestMapping("Index")
     public String doIndexUI(){
-        return "starter";//templates/pages/starter.html
+        return "firstPage";//templates/pages/firstPage.html
     }
-    /**
-     * 返回登录页面
-     * @return
-     */
+
+    //跳转登陆页面
     @RequestMapping("Login")
     public String doLoginUI(){
         return "login";
     }
 
-    //方法返回值的处理过程?
-    //1.此值("starter")会返回给DispatcherServlet(前端控制器)
-    //2.DispatcherServlet调用视图解析器(ViewResolver)对返回的view进行解析
-    //3.视图解析器将解析结果返回给DispatcherServlet对象
-    //4.DispatcherServlet将页面响应到客户端.
 
-    /**
-     * 基于此方法返回分页页面.
-     * @return
-     */
-    @RequestMapping("doPageUI")
+    //跳转视频审核通过页面
+       @RequestMapping("sys/video/checked")
+    public String checked(){
+        return "sys/video/checked";
+    }
+    //跳转未审核视频页面
+    @RequestMapping("sys/video/unCheck")
+    public String unCheck(){
+        return "sys/video/unCheck";
+    }
+    //跳转禁播视频页面
+    @RequestMapping("sys/video/forbidden")
+    public String forbidden(){
+        return "sys/video/forbidden";
+    }
+
+
+
+
+
+
+    //跳转排行榜页面
+    @RequestMapping("sys/rankingList/test")
+    public String videoAndArticle(){
+        return "sys/rankingList/test";
+    }
+
+
+
+
+
+    //跳转帖子审核通过页面
+    @RequestMapping("sys/article/checked1")
+    public String checked1(){
+        return "sys/article/checked1";
+    }
+    //跳转未审核帖子页面
+    @RequestMapping("sys/article/unCheck1")
+    public String unCheck2(){
+        return "sys/article/unCheck1";
+    }
+    //跳转禁播帖子页面
+    @RequestMapping("sys/article/forbidden1")
+    public String forbidden3(){
+        return "sys/article/forbidden1";
+    }
+
+
+
+
+
+    //跳转上下页查询条页面
+    @RequestMapping("common/doPageUI")
     public String doPageUI(){
         return "common/page";
     }
+
+
 }
