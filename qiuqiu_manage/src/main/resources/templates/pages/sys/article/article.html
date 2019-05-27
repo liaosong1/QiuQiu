@@ -1,0 +1,233 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">用户管理</h3>
+
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 350px;">
+						<input type="text" name="table_search" id="searchNameId"
+							class="form-control pull-right" placeholder="标题">
+
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default btn-search">
+                                <i class="fa fa-search"></i>
+							</button>
+							<button type="button" class="btn btn-default btn-update" id="stateType"></button>
+							<button type="button" class="btn btn-default btn-adopt" id="stateType1" style="display: none"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>标题</th>
+							<th>创建时间</th>
+							<th>文章</th>
+							<th>点击量</th>
+							<th>收藏量</th>
+							<th>评论量</th>
+							<th>封禁状态</th>
+							<th>用户ID</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyId"></tbody>
+				</table>
+			</div>
+			<div id="pageId" class="box-footer clearfix">
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+<script type="text/javascript">
+   $(document).ready(function(){
+	   $("#pageId").load("doPageUI",function(){
+		   doGetObjects();
+	   });
+	   $(".input-group-btn")
+	   .on("click",".btn-search",doQueryObjects)
+ 	   .on("click",".btn-adopt,.btn-update",doLoadEditUI);
+	   $("tbody").on("click",".btn-valid",doValidById);
+   });
+  
+   function doLoadEditUI(){
+	   //1.判定点击的对象
+	   var title;
+	   var ids=doGetCheckedId();
+	   console.log("id="+ids)
+	   if(!ids){
+		  alert("请先选择");
+		  return;
+	   }
+	   if($(this).hasClass("btn-adopt")){
+		   //2.发起异步请求
+		   var url = "article/unsealing";
+		   var params={"ids":ids};
+		   $.post(url,params, function (result) {
+			   if (result.state == 1) {
+				   alert(result.message);
+				   location.reload();
+				   // doCancel();
+			   } else {
+				   alert(result.message);
+			   }
+		   });
+	   }else if($(this).hasClass("btn-update")){
+		   if($("#mainContentId").data("id")=="article/adopt"||$("#mainContentId").data("id")=="article/wait") {
+			   //2.发起异步请求
+			   var url = "article/ban";
+			   var params={"ids":ids};
+			   $.post(url,params, function (result) {
+				   if (result.state == 1) {
+					   alert(result.message);
+					   var href ="sys/article/checked1";
+					   location.reload();
+					   // doCancel();
+				   } else {
+					   alert(result.message);
+				   }
+			   });
+		   }
+		   if($("#mainContentId").data("id")=="article/baned") {
+			   //2.发起异步请求
+			   var url = "article/unsealing";
+			   var params={"ids":ids};
+			   $.post(url,params, function (result) {
+				   if (result.state == 1) {
+					   alert(result.message);
+					   var href ="sys/article/checked1";
+					   location.reload();
+					   // doCancel();
+				   } else {
+					   alert(result.message);
+				   }
+			   });
+		   }
+		   title="禁用文章";
+		   //基于id进行查询并加载编辑页面
+		   dobanVideoById(id,title);
+	   }
+   } 
+   function dobanVideoById(id,title){
+	   var data={"id":id};
+		 $("#mainContentId").data("rowData",data);
+	   doLoadPage(title);
+   } 
+   
+   function doGetCheckedId(){
+	 return $("tbody input[name='radioId']:checked").val();
+   }
+   function doLoadPage(id,title){
+	   //2.url
+		 if($("#mainContentId").data("id")=="article/adopt"||$("#mainContentId").data("id")=="article/wait"){
+			var url="dealVideo/banVideoUI";
+			$("#mainContentId").load(url,function(){
+		   $(".box-title").html(title);
+	   }) 
+		} 
+		 if($("#mainContentId").data("id")=="article/ban"){
+			 //2.发起异步请求
+	   		var url="dealVideo/unblockVideo.do";	
+				$.post(insertUrl,id,function(result){
+				 if(result.state==1){
+					 alert(result.message);
+					 doCancel();
+				 }else{
+						alert(result.message);
+		 			}
+			 });
+		 }
+	   
+   }
+   //处理查询按钮事件
+   function doQueryObjects(){
+	   $("#pageId").data("pageCurrent",1);
+	   if( $("#mainContentId").data("id")=="article/adopt") $("#mainContentId").data("id","article/adoptFind");
+	   if( $("#mainContentId").data("id")=="article/wait") $("#mainContentId").data("id","article/waitFind");
+	   if( $("#mainContentId").data("id")=="article/baned") $("#mainContentId").data("id","article/banedFind");
+	   doGetObjects();
+   }
+   //页面加载完成异步加载当前页数据
+   function doGetObjects(){
+		var url=$("#mainContentId").data("id");
+	   if(url=="article/adopt"||url=="article/adoptFind"){
+		   console.log("url",url);
+		   $("#stateType").html("封禁");
+		   $("#stateType1").hide();
+	   }
+	   if(url=="article/wait"||url=="article/waitFind"){
+		   $("#stateType").html("封禁");
+		   $("#stateType1").show();
+		   $("#stateType1").html("通过审核")
+	   }
+	   if(url=="article/baned"||url=="article/banedFind"){
+		   $("#stateType").html("解封");
+		   $("#stateType1").hide();
+	   }
+	   var pageCurrent=$("#pageId").data("pageCurrent");
+	   if(!pageCurrent)pageCurrent=1;
+	   var condition=$("#searchNameId").val();
+	   console.log("condition",condition);
+	   var params={"pageCurrent":pageCurrent,"condition":condition}
+	   console.log(params);
+	   $.getJSON(url,params,function(result){
+		   console.log(result);
+		   doHandleResponseResult(result);
+	   });
+   }
+   function doHandleResponseResult(result){
+	   if(result.state==1){
+		  doSetTableBodyRows(result.data.records);
+		  doSetPagination(result.data);
+		}else{
+		  alert(result.message);
+	   }
+   }
+   //通过服务端返回的数据初始化页面
+   function doSetTableBodyRows(data){
+	  //1.获取tbody对象，并清空内容
+	  var tBody=$("#tbodyId");
+	  tBody.empty();
+	  //2.迭代data内容将数据追加到tbody中
+	  for(var i in data){
+		  var tr=$("<tr></tr>");
+		  tr.data("rowData",data[i]);
+		  var tds=doCreateTds(data[i]);
+		  tr.append(tds);
+		  tBody.append(tr);
+	  }
+   }
+   function doCreateTds(row){
+	   var valid;
+	   var type;
+	   console.log("row.banstate",row.banState);
+	   if(row.banState==0){
+		   valid="封禁"
+	   }else if(row.banState==1){
+		   valid="通过审核"
+	   }else if(row.banState==2){
+		   valid="未审核"
+	   }
+	   console.log(row);
+ 	   var tds="<td><input type='radio' name='radioId' value='"+row.id+"' ></td>"+
+	     "<td>"+row.title+"</td>"+
+	     "<td>"+new Date(row.createTime).toLocaleString()+"</td>"+
+	     "<td>"+row.addres+"</td>"+
+	     "<td>"+row.clickNum+"</td>"+
+	     "<td>"+row.storeNum+"</td>"+
+	     "<td>"+row.commentNum+"</td>"+
+	     "<td>"+valid+"</td>"+      
+	     "<td>"+row.userId+"</td>";
+       return tds;
+   }
+</script>
+
+
+
+
