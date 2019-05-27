@@ -54,17 +54,17 @@ public class PageController {
     //跳转帖子审核通过页面
     @RequestMapping("sys/article/checked1")
     public String checked1(){
-        return "sys/article/checked1";
+        return "sys/article/article";
     }
     //跳转未审核帖子页面
     @RequestMapping("sys/article/unCheck1")
     public String unCheck2(){
-        return "sys/article/unCheck1";
+        return "sys/article/article";
     }
     //跳转禁播帖子页面
     @RequestMapping("sys/article/forbidden1")
     public String forbidden3(){
-        return "sys/article/forbidden1";
+        return "sys/article/article";
     }
 
 
@@ -72,10 +72,13 @@ public class PageController {
 
 
     //跳转上下页查询条页面
-    @RequestMapping("common/doPageUI")
+    @RequestMapping("doPageUI")
     public String doPageUI(){
         return "common/page";
     }
-
+    @RequestMapping("sys/user_list")
+    public String doUserUI(){
+        return "sys/user_list";
+    }
 
 }

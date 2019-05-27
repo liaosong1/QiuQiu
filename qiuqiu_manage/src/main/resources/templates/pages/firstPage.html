@@ -216,7 +216,7 @@
         <small>控制 ♈ 面板 </small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="doIndexUI.do"><i class="fa fa-dashboard"></i> 主页</a></li>
+        <li><a href="Index"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li class="active" >返回</li>
       </ol>
     </section>
@@ -260,16 +260,26 @@ $(function(){
     doLoadUI("unCheck","sys/video/unCheck");
     doLoadUI("forbidden","sys/video/forbidden");
 
-    doLoadUI("checked1","sys/article/checked1");
-    doLoadUI("unCheck2","sys/article/unCheck1");
+    doLoadUI("checked2","sys/article/checked1");
+    doLoadUI("unCheck1","sys/article/unCheck1");
     doLoadUI("forbidden3","sys/article/forbidden1");
-
+    doLoadUI("user-controller","sys/user_list")
     doLoadUI("rankingList","sys/rankingList/test");
  });
  function doLoadUI(id,url){
 	   $("#"+id).click(function(){
 			  //load函数是将url对应的资源加载到指定位置
-		  $("#mainContentId").load(url);
+         if(id=="checked2"){
+           $("#mainContentId").data("id","article/adopt");
+         }
+         if(id=="unCheck1"){
+           $("#mainContentId").data("id","article/wait");
+         }
+         if(id=="forbidden3"){
+           $("#mainContentId").data("id","article/baned");
+         }
+         //load函数是将url对应的资源加载到指定位置
+         $("#mainContentId").load(url);
 	   });
  }
 

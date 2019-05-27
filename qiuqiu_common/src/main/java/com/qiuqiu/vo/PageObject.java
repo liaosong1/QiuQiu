@@ -33,7 +33,7 @@ public class PageObject<T> implements Serializable {//类泛型
     /**
      * 页面大小(每页最多显示多少条记录)
      */
-    private Integer pageSize = 3;
+    private Integer pageSize = 5;
 
 
 }

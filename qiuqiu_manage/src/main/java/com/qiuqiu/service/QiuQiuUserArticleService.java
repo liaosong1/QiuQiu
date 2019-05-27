@@ -13,4 +13,10 @@ public interface QiuQiuUserArticleService {
    JsonResult banArticleByIds(Integer[] ids);
 
    JsonResult UnsealingArticleByIds(Integer[] ids);
+
+   JsonResult findAdoptExamine(Integer pageCurrent,String condition);
+
+   JsonResult findBanedExamine(Integer pageCurrent, String condition);
+
+   JsonResult findwaitExamine(Integer pageCurrent, String condition);
 }

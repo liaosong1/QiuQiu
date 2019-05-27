@@ -4,17 +4,31 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qiuqiu.mapper.QiuQiuUserArticleDao">
     <select id="findQiuQiuUserArticleHasBaned" resultType="com.qiuqiu.entity.QiuQiuUserArticle">
-        select * from qq_article where banState=#{type} ORDER BY id DESC limit #{pageCurrent},#{pageSize};
+        select * from qq_article where banState=#{type}
+        <if test="condition!=null">
+            <bind name="addresname" value="'%' + condition + '%'"/>
+          and title like #{addresname}
+        </if>
+          limit #{pageCurrent},#{pageSize}
+    </select>
+    <select id="findAllOfNum" resultType="int">
+        select count(*) from qq_article
     </select>
     <update id="buArticleByIds">
-        UPDATE qq_article  SET banState=#{valid}  WHERE id IN (
+        UPDATE qq_article  SET banState=#{valid}
+        where id in (
         <foreach collection="ids" separator="," item="id">#{id}</foreach>
         )
     </update>
     <insert id="banArticleReason" parameterType="java.util.List">
         insert into qq_banarticle (articleId,adminId,content,createdTime,updateTime) values
         <foreach collection="qiuBanReason" separator="," index="index" item="item">
-            (#{item.articleId,jdbcType=INTEGER},#{item.adminId,jdbcType=INTEGER},#{item.content,jdbcType=VARCHAR},now(),now())
+            (#{item.articleId},#{item.adminId},#{item.content},now(),now())
         </foreach>
     </insert>
+    <delete id="deleteReason" parameterType="java.util.List">
+        delete from qq_banarticle  where articleId in (
+        <foreach collection="ids" separator="," item="id">#{id}</foreach>
+        )
+    </delete>
 </mapper>

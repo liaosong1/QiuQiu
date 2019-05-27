@@ -10,9 +10,13 @@ import java.util.List;
 
 @Component
 public interface QiuQiuUserArticleDao extends BaseMapper<QiuQiuUserArticle> {
-    List<QiuQiuUserArticle> findQiuQiuUserArticleHasBaned(Integer type,Integer pageCurrent,Integer pageSize);
+    List<QiuQiuUserArticle> findQiuQiuUserArticleHasBaned(Integer type,Integer pageCurrent,Integer pageSize,@Param("condition") String condition);
 
     void buArticleByIds(@Param("ids")Integer[] ids,@Param("valid")Integer valid);
 
     void banArticleReason(@Param("qiuBanReason") List<QiuQiuBanReason> qiuBanReason);
+
+    Integer findAllOfNum();
+
+    void deleteReason(@Param("ids") List<Integer> ids);
 }

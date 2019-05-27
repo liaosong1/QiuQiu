@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ArticleController {
     @Autowired
     private QiuQiuUserArticleService qiuQiuUserArticleService;
-
+    @RequestMapping("view")
+    public String articlePages(){
+        return "article/checked1";
+    }
     /**
      * 被封禁的文章
      * @param pageCurrent
@@ -40,6 +43,7 @@ public class ArticleController {
     @RequestMapping("adopt")
     @ResponseBody
     public JsonResult adoptExamineArticle(Integer pageCurrent){
+
         return qiuQiuUserArticleService.findAdoptExamineArticle(pageCurrent);
     }
     /**
@@ -57,5 +61,23 @@ public class ArticleController {
     @ResponseBody
     public JsonResult UnsealingArticle(Integer[] ids){
         return qiuQiuUserArticleService.UnsealingArticleByIds(ids);
+    }
+    //通过文章的查询
+    @RequestMapping("adoptFind")
+    @ResponseBody
+    public JsonResult adoptFind(Integer pageCurrent,String condition){
+        return qiuQiuUserArticleService.findAdoptExamine(pageCurrent, condition);
+    }
+    //封禁文章的查询
+    @RequestMapping("banedFind")
+    @ResponseBody
+    public JsonResult banedFind(Integer pageCurrent,String condition){
+        return qiuQiuUserArticleService.findBanedExamine(pageCurrent, condition);
+    }
+    //待审核文章的查询
+    @RequestMapping("waitFind")
+    @ResponseBody
+    public JsonResult waitFind(Integer pageCurrent,String condition){
+        return qiuQiuUserArticleService.findwaitExamine(pageCurrent, condition);
     }
 }
